@@ -223,9 +223,130 @@
 <div class="font-headline-sm text-headline-sm font-bold text-on-surface">BeerTasting</div>
 <div class="font-body-sm text-text-secondary text-center">BeerTasting — eine der größten Bier-Bewertungs-Communities im DACH-Raum.</div>
 <div class="flex gap-4">
-<a class="font-body-sm text-text-secondary hover:text-on-surface transition-colors" href="#">Impressum</a>
-<a class="font-body-sm text-text-secondary hover:text-on-surface transition-colors" href="#">Datenschutz</a>
+<button type="button" onclick="openImpressum()" class="font-body-sm text-text-secondary hover:text-on-surface transition-colors cursor-pointer">Impressum</button>
+<button type="button" onclick="openDatenschutz()" class="font-body-sm text-text-secondary hover:text-on-surface transition-colors cursor-pointer">Datenschutz</button>
 </div>
 </div>
 </footer>
+<!-- Impressum Modal -->
+<div id="impressum-overlay" onclick="closeImpressum(event)" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/50 px-gutter">
+<div onclick="event.stopPropagation()" class="bg-surface-container-lowest rounded-[8px] shadow-xl max-w-md w-full p-8 relative max-h-[85vh] overflow-y-auto">
+<button type="button" onclick="closeImpressum()" aria-label="Schließen" class="absolute top-4 right-4 text-text-secondary hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6">Impressum</h3>
+<div class="font-body-md text-body-md text-on-surface space-y-4">
+<div>
+<p class="font-bold">KALEA GmbH</p>
+<p>Biberngasse 31</p>
+<p>A-5020 Salzburg</p>
+</div>
+<div class="text-text-secondary">
+<p>Tel: +43 662 820 474 0</p>
+<p>Fax: +43 662 829 402</p>
+<p>E-Mail: <a href="mailto:info@kalea.com" class="text-[#E89B2C] hover:underline">info@kalea.com</a></p>
+<p>Web: <a href="https://www.kalea.com" target="_blank" rel="noopener" class="text-[#E89B2C] hover:underline">www.kalea.com</a></p>
+</div>
+<div class="text-text-secondary">
+<p>FN 362248v, LG Salzburg</p>
+<p>Persönlich haftender Gesellschafter:</p>
+<p>Geschäftsführer Mag. Peter Reimann</p>
+<p>UID-Nr.: ATU 66418806</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Datenschutz Modal -->
+<div id="datenschutz-overlay" onclick="closeDatenschutz(event)" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/50 px-gutter py-8">
+<div onclick="event.stopPropagation()" class="bg-surface-container-lowest rounded-[8px] shadow-xl max-w-2xl w-full p-8 relative max-h-[85vh] overflow-y-auto">
+<button type="button" onclick="closeDatenschutz()" aria-label="Schließen" class="absolute top-4 right-4 text-text-secondary hover:text-on-surface transition-colors bg-surface-container-lowest">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Datenschutzerklärung</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-6">der KALEA GmbH, Biberngasse 31, 5020 Salzburg · FN 362248v LG Salzburg · ATU 66418806<br>Stand: 01. Oktober 2023</p>
+<div class="font-body-md text-body-md text-on-surface space-y-6">
+
+<div class="space-y-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">1. Generelles</h4>
+<p>Diese Datenschutzerklärung und die Cookie-Richtlinie beziehen sich auf www.beertasting.com sowie alle anderen Webseiten und Apps, welche von der KALEA GmbH betrieben werden und der Promotion und dem Verkauf unserer Produkte gewidmet sind.</p>
+<p>Wir, die KALEA GmbH, Biberngasse 31, 5020 Salzburg, Austria („KALEA GmbH"), nutzen Ihre Informationen sorgfältig und handeln gemäß der geltenden Gesetze und Vorschriften.</p>
+<p>Wir empfehlen Ihnen, diese Datenschutzerklärung und die Cookie-Richtlinie sorgfältig durchzulesen. Sie enthalten wichtige Informationen über die Nutzung Ihrer persönlichen Daten, die wir über die Webseiten und Apps erhalten. Durch die Nutzung der Dienstleistungen dieser Website erklären Sie sich mit unserer Datenschutz- und Cookie-Erklärung einverstanden.</p>
+</div>
+
+<div class="space-y-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">2. Datenschutzerklärung</h4>
+<p class="font-bold">Welche persönlichen Daten werden gesammelt?</p>
+<p>Während Sie unsere Website besuchen, können wir bestimmte persönliche Daten erfragen oder auf andere Weise sammeln. Diese Daten können umfassen: Name, Geburtsdatum, Geschlecht, Adresse, Telefonnummer, Verbrauchertyp (privat oder beruflich) und Zahlungsdetails. Zusätzlich können wir persönliche Daten durch Cookies oder ähnliche Verfahren sammeln, z. B. Ihre IP-Adresse, Cookie-ID, Standort, die Websites, die Sie während des Besuchs unserer Website besucht haben, und die Werbungen, die Sie angesehen haben.</p>
+<p class="font-bold pt-2">Wie verwenden wir Ihre persönlichen Daten?</p>
+<p>Ihre Daten können für folgende Zwecke verwendet werden:</p>
+<ul class="list-disc pl-5 space-y-1">
+<li><span class="font-bold">Bearbeitung Ihrer Bestellung:</span> Wenn Sie eine Bestellung aufgeben, nutzen wir Ihre Daten für die Erfüllung und Abwicklung Ihrer Bestellung.</li>
+<li><span class="font-bold">Customer Service:</span> um auf Ihre Nachrichten zu antworten.</li>
+<li><span class="font-bold">Marketing:</span> um den Inhalt unserer Website und unserer Angebote auf der Website oder auf anderen Marketingkanälen an Ihre persönlichen Interessen anzupassen.</li>
+<li><span class="font-bold">Newsletter:</span> um Ihnen Informationen über unser Sortiment, unsere Angebote und Dienstleistungen zuzusenden. Sie können den Newsletter jederzeit über einen Link in der E-Mail abbestellen, diesen Wunsch über Ihr Nutzerkonto angeben oder uns diesbezüglich kontaktieren.</li>
+<li><span class="font-bold">Verbesserungen an der Website:</span> um die Nutzung der Website zu analysieren, sodass wir unsere Dienstleistungen verbessern und Probleme beheben können.</li>
+<li><span class="font-bold">Weitere Zwecke:</span> um gesetzliche Vorschriften einzuhalten, z. B. hinsichtlich der Verkaufsverwaltung und dem Verhindern von Betrug oder Geldwäsche.</li>
+</ul>
+<p class="font-bold pt-2">Mit welchen dritten Personen werden Ihre persönlichen Daten geteilt?</p>
+<p>Wir arbeiten mit Dienstleistern zusammen, die bestimmte Daten für uns verarbeiten. Dies wird nur unter strenger Berücksichtigung des Datenschutzgesetzes betrieben. Wir haben mit unseren Dienstleistern Vereinbarungen über die Datenverarbeitung getroffen, um alle geltenden gesetzlichen Anforderungen zu erfüllen. Um unsere Website zu betreiben und Produkte und Dienstleistungen anzubieten, teilen wir Informationen möglicherweise mit den folgenden Personen:</p>
+<ul class="list-disc pl-5 space-y-1">
+<li>Personen der KALEA GmbH, aufgrund eines gemeinsamen IT-Systems, um durch die Website erhaltene Daten zu sichern;</li>
+<li>Dienstleister, die die Informationen benötigen, um Ihnen unsere Produkte und Dienstleistungen anzubieten (z. B. Versandunternehmen zur Lieferung bestellter Waren, Kreditinstitute und Zahlungsdienstleister zur Abwicklung von Zahlungen);</li>
+<li>Werbepartner, die unsere Website für Sie interessanter gestalten;</li>
+<li>Unabhängige Inkassounternehmen, um ausstehende Zahlungen einzufordern;</li>
+<li>Ermittlungsbehörden aufgrund der Pflicht, rechtlichen Verpflichtungen oder gerichtlichen Anordnungen nachzukommen.</li>
+</ul>
+<p>Diese Personen können ihren Sitz in Österreich oder anderen Staaten des Europäischen Wirtschaftsraums haben. Wenn wir Informationen an Personen außerhalb des Europäischen Wirtschaftsraums weitergeben, stellen wir sicher, dass angemessene Sicherheitsvorkehrungen getroffen werden (z. B. durch den Gebrauch der EU-Standardvertragsklauseln). Wir teilen Ihre persönlichen Daten mit keinen anderen Parteien.</p>
+<p class="font-bold pt-2">Andere Websites</p>
+<p>Unsere Website kann Links zu anderen Websites enthalten. Wir sind nicht für die Datenschutzerklärungen, den Inhalt oder die Sicherheit dieser Websites verantwortlich.</p>
+<p class="font-bold pt-2">Speichern Ihrer Daten</p>
+<p>Wir behandeln Ihre persönlichen Daten mit größter Sorgfalt und ergreifen verschiedene technische und organisatorische Maßnahmen, um sie so gut wie möglich vor Verlust oder Missbrauch zu schützen.</p>
+<p class="font-bold pt-2">Aufbewahrungszeitraum Ihrer Daten</p>
+<p>Die von Ihnen zur Verfügung gestellten Daten werden so lange wie gesetzlich vorgeschrieben oder so lange wie nötig aufbewahrt. Wenn die Daten nicht länger gebraucht werden, ergreifen wir angemessene Maßnahmen zum Vernichten oder Anonymisieren Ihrer persönlichen Daten.</p>
+<p class="font-bold pt-2">Datenschutzbestimmungen für Minderjährige</p>
+<p>Die Website ist nicht für Personen unter 18 Jahren zugänglich. Wir sammeln zu keiner Zeit aktiv persönliche Daten von Personen unter 18 Jahren.</p>
+</div>
+
+<div class="space-y-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">3. Cookies</h4>
+<p>Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren, Funktionen für soziale Medien anbieten zu können und die Zugriffe auf unserer Website zu analysieren. Außerdem geben wir Informationen zu Ihrer Verwendung unserer Website an unsere Partner für soziale Medien, Werbung und Analysen weiter. Unsere Partner führen diese Informationen möglicherweise mit weiteren Daten zusammen, die Sie ihnen bereitgestellt haben oder die sie im Rahmen Ihrer Nutzung der Dienste gesammelt haben.</p>
+<p>Eine Verarbeitung und Verwendung der Cookies durch Drittanbieter findet teils in den USA statt. Es liegt kein Angemessenheitsbeschluss der Europäischen Kommission vor, dass in den USA ein angemessenes Datenschutzniveau besteht. Daher besteht die Möglichkeit, dass personenbezogene Daten zu Kontroll- und Überwachungszwecken durch Behörden herangezogen werden.</p>
+</div>
+
+<div class="space-y-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">4. Analyse-Tools und Werbung</h4>
+<p class="font-bold">Google Analytics</p>
+<p>Diese Website nutzt Funktionen des Webanalysedienstes Google Analytics. Anbieter ist die Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Google Analytics verwendet sogenannte „Cookies", die eine Analyse der Benutzung der Website ermöglichen. Die Speicherung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO; der Websitebetreiber hat ein berechtigtes Interesse an der Analyse des Nutzerverhaltens, um Webangebot und Werbung zu optimieren.</p>
+<p class="font-bold pt-2">IP-Anonymisierung</p>
+<p>Wir haben auf dieser Website die Funktion IP-Anonymisierung aktiviert. Dadurch wird Ihre IP-Adresse von Google innerhalb der EU bzw. des EWR vor der Übermittlung in die USA gekürzt. Die übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt.</p>
+<p class="font-bold pt-2">Widerspruch gegen Datenerfassung</p>
+<p>Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern. Die Erfassung der durch den Cookie erzeugten Daten an Google können Sie über das Browser-Plugin unter <a href="https://tools.google.com/dlpage/gaoptout?hl=de" target="_blank" rel="noopener" class="text-[#E89B2C] hover:underline">tools.google.com/dlpage/gaoptout</a> verhindern.</p>
+<p class="font-bold pt-2">Google AdWords &amp; Conversion-Tracking</p>
+<p>Diese Website verwendet Google AdWords mit Conversion-Tracking. Beim Klick auf eine Google-Anzeige wird ein Cookie gesetzt, das nach 30 Tagen seine Gültigkeit verliert und nicht der persönlichen Identifizierung dient. Die Speicherung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.</p>
+<p class="font-bold pt-2">Google reCAPTCHA</p>
+<p>Wir nutzen „Google reCAPTCHA" zur Prüfung, ob Eingaben durch einen Menschen oder ein automatisiertes Programm erfolgen. reCAPTCHA analysiert dazu verschiedene Informationen (z. B. IP-Adresse, Verweildauer, Mausbewegungen). Die Datenverarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO zum Schutz vor missbräuchlicher automatisierter Ausspähung und SPAM.</p>
+</div>
+
+<div class="space-y-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">5. Zugang zu und Änderung Ihrer Daten</h4>
+<p>Sie können eine Übersicht aller persönlichen Daten anfordern, die wir von Ihnen verarbeitet haben, und wie wir diese verwenden. Darüber hinaus können Sie die Daten ändern, sollten diese nicht korrekt sein, und uns bitten, Ihre Daten nicht weiter zu verarbeiten. Wenn Sie Ihr Nutzerkonto deaktivieren, können Sie all Ihre persönlichen Daten löschen — außer wir haben rechtlich zulässige Gründe, Ihre Daten weiterhin zu verarbeiten.</p>
+</div>
+
+<div class="space-y-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">6. Geltendes Recht und Rechtsstand</h4>
+<p>Diese Datenschutzerklärung sowie die Verarbeitung Ihrer personenbezogenen Daten unterliegen dem Recht Österreichs sowie den einschlägigen EU-rechtlichen Vorschriften. Gerichtsstand für sämtliche die Datenverarbeitung betreffende Rechtsstreitigkeiten ist Salzburg, soweit keine zwingenden nationalen Vorschriften entgegenstehen.</p>
+<p>Bei Fragen zur Datenschutzerklärung, Cookie-Richtlinie oder der Verarbeitung Ihrer persönlichen Daten kontaktieren Sie uns bitte: <a href="mailto:info@kalea.com" class="text-[#E89B2C] hover:underline">info@kalea.com</a></p>
+<p class="text-text-secondary">Diese Datenschutzerklärung wurde zuletzt am 01. Oktober 2023 aktualisiert.</p>
+</div>
+
+</div>
+</div>
+</div>
+<script>
+function openImpressum(){var o=document.getElementById('impressum-overlay');o.classList.remove('hidden');o.classList.add('flex');document.body.style.overflow='hidden';}
+function closeImpressum(e){var o=document.getElementById('impressum-overlay');o.classList.add('hidden');o.classList.remove('flex');document.body.style.overflow='';}
+function openDatenschutz(){var o=document.getElementById('datenschutz-overlay');o.classList.remove('hidden');o.classList.add('flex');document.body.style.overflow='hidden';}
+function closeDatenschutz(e){var o=document.getElementById('datenschutz-overlay');o.classList.add('hidden');o.classList.remove('flex');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeImpressum();closeDatenschutz();}});
+</script>
 </body></html>
