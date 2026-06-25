@@ -45,10 +45,15 @@
         }
     </script>
 <style>.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-.hero-phone { transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); will-change: transform; }
-.hero-phone:hover { transform: translateY(-12px) scale(1.03); }
-.hero-phone img { transition: filter 0.4s ease; }
-.hero-phone:hover img { filter: drop-shadow(0 30px 40px rgba(0,0,0,0.25)); }</style>
+.hero-phone img { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s ease; filter: drop-shadow(0 18px 30px rgba(0,0,0,0.16)); will-change: transform; }
+.hero-phone:hover img { transform: translateY(-8px) scale(1.02); filter: drop-shadow(0 32px 44px rgba(0,0,0,0.24)); }
+.hero-phone .annotation { opacity: 0; transform: translateX(0); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); pointer-events: none; }
+.hero-phone:hover .annotation { opacity: 1; }
+.hero-phone:hover .annotation:nth-child(2) { transition-delay: 0.05s; }
+.hero-phone:hover .annotation:nth-child(3) { transition-delay: 0.12s; }
+.hero-phone:hover .annotation:nth-child(4) { transition-delay: 0.19s; }
+.hero-phone:hover .annotation:nth-child(5) { transition-delay: 0.26s; }
+@media (max-width: 1023px) { .hero-phone .annotation { display: none; } }</style>
 </head>
 <body class="bg-surface-container-lowest text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopNavBar -->
@@ -75,14 +80,47 @@
 </div>
 </div>
 </header>
-<!-- Hero Image: App Screenshot -->
+<!-- Hero Image: App Screenshot mit Annotationen -->
 <section class="relative bg-surface-container-lowest pb-section-gap px-gutter overflow-hidden">
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+<!-- Phone links -->
+<div class="relative flex justify-center pt-16 lg:pt-12">
 <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-<div class="w-[480px] h-[480px] max-w-[90vw] max-h-[90vw] rounded-full bg-[#E89B2C] opacity-[0.07] blur-3xl"></div>
+<div class="w-[420px] h-[420px] max-w-[85vw] max-h-[85vw] rounded-full bg-[#E89B2C] opacity-[0.08] blur-3xl"></div>
 </div>
-<div class="relative z-10 max-w-md mx-auto flex justify-center">
-<div class="hero-phone group cursor-pointer">
-<img src="Hero.png" alt="BeerTasting Challenge Wien – Live-Ansicht in der App mit Karte, Countdown und Stationen" class="w-full max-w-[340px] h-auto mx-auto drop-shadow-2xl">
+<div class="hero-phone group relative z-10">
+<img src="Hero.png" alt="BeerTasting Challenge Wien – Live-Ansicht in der App mit Karte, Countdown und Stationen" class="w-full max-w-[300px] h-auto mx-auto block">
+<!-- Annotationen: erscheinen beim Hover -->
+<div class="annotation absolute top-[14%] right-[-8px] lg:right-[-40px] flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface bg-surface-container-lowest/90 backdrop-blur px-2 py-1 rounded shadow-sm whitespace-nowrap">Countdown bis Ende</span>
+<span class="block w-6 h-px bg-[#E89B2C]"></span>
+</div>
+<div class="annotation absolute top-[63%] left-[-8px] lg:left-[-44px] flex items-center gap-2 flex-row-reverse">
+<span class="font-body-sm text-body-sm text-on-surface bg-surface-container-lowest/90 backdrop-blur px-2 py-1 rounded shadow-sm whitespace-nowrap">Live-Status</span>
+<span class="block w-6 h-px bg-[#E89B2C]"></span>
+</div>
+<div class="annotation absolute top-[80%] right-[-8px] lg:right-[-52px] flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface bg-surface-container-lowest/90 backdrop-blur px-2 py-1 rounded shadow-sm whitespace-nowrap">Alle Stationen</span>
+<span class="block w-6 h-px bg-[#E89B2C]"></span>
+</div>
+<div class="annotation absolute top-[90%] left-[-8px] lg:left-[-44px] flex items-center gap-2 flex-row-reverse">
+<span class="font-body-sm text-body-sm text-on-surface bg-surface-container-lowest/90 backdrop-blur px-2 py-1 rounded shadow-sm whitespace-nowrap">Teilnehmer</span>
+<span class="block w-6 h-px bg-[#E89B2C]"></span>
+</div>
+</div>
+</div>
+<!-- Text rechts -->
+<div class="space-y-stack-md lg:pl-stack-md">
+<span class="font-label-caps text-label-caps text-[#E89B2C] uppercase tracking-wider">Live in der App</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Die ganze Challenge auf einer Karte.</h2>
+<p class="font-body-lg text-body-lg text-text-secondary">Alle teilnehmenden Lokale auf einen Blick, ein Countdown bis zum Ende und das Live-Leaderboard — direkt in der BeerTasting App.</p>
+<ul class="space-y-3 pt-2">
+<li class="flex items-start gap-3"><span class="block w-5 h-px bg-[#E89B2C] mt-3 shrink-0"></span><span class="font-body-md text-body-md text-on-surface"><span class="font-bold">Countdown</span> — zeigt die verbleibende Zeit der Challenge.</span></li>
+<li class="flex items-start gap-3"><span class="block w-5 h-px bg-[#E89B2C] mt-3 shrink-0"></span><span class="font-body-md text-body-md text-on-surface"><span class="font-bold">Live-Status</span> — die Challenge läuft in Echtzeit.</span></li>
+<li class="flex items-start gap-3"><span class="block w-5 h-px bg-[#E89B2C] mt-3 shrink-0"></span><span class="font-body-md text-body-md text-on-surface"><span class="font-bold">Alle Stationen</span> — jedes besuchte Lokal wird gezählt.</span></li>
+<li class="flex items-start gap-3"><span class="block w-5 h-px bg-[#E89B2C] mt-3 shrink-0"></span><span class="font-body-md text-body-md text-on-surface"><span class="font-bold">Teilnehmer</span> — sieh, wer mit dabei ist.</span></li>
+</ul>
+<p class="font-body-sm text-body-sm text-text-secondary pt-1 hidden lg:block">Fahre mit der Maus über das Vorschaubild, um die Felder hervorzuheben.</p>
 </div>
 </div>
 </section>
