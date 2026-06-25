@@ -1,0 +1,231 @@
+<!DOCTYPE html><html class="light scroll-smooth" lang="de"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>BeerTasting Digital Challenge Wien</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/brandon-text" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Brandon+Text:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#524435","error": "#ba1a1a","surface-bright": "#f9f9f9",
+                        "primary-fixed-dim": "#ffb95f","surface-container-highest": "#e2e2e2","text-secondary": "#666666",
+                        "outline": "#857463","inverse-primary": "#ffb95f","secondary": "#5f5e5e","on-background": "#1a1c1c",
+                        "on-primary": "#ffffff","on-surface": "#1a1c1c","surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f3f3f4","outline-variant": "#d7c3af","primary-container": "#e89b2c",
+                        "surface-dim": "#dadada","background": "#f9f9f9","surface-container-high": "#e8e8e8","surface": "#f9f9f9",
+                        "primary": "#855300","border-muted": "#E0E0E0","on-primary-container": "#5b3800",
+                        "inverse-on-surface": "#f0f1f1","surface-container": "#eeeeee","surface-variant": "#e2e2e2"
+                    },
+                    "borderRadius": { "DEFAULT": "0.25rem","lg": "0.5rem","xl": "0.75rem","full": "9999px" },
+                    "spacing": { "gutter": "24px","element-gap": "16px","container-max": "1288px","stack-lg": "48px",
+                        "margin-page": "32px","section-gap": "120px","stack-sm": "8px","stack-md": "24px" },
+                    "fontFamily": {
+                        "label-caps": ["Brandon Text"],"body-lg": ["Brandon Text"],"headline-lg": ["Brandon Text"],
+                        "button": ["Brandon Text"],"headline-md": ["Brandon Text"],"body-sm": ["Brandon Text"],
+                        "headline-sm": ["Brandon Text"],"headline-lg-mobile": ["Brandon Text"],"body-md": ["Brandon Text"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "button": ["16px", { "lineHeight": "1", "fontWeight": "700" }],
+                        "headline-md": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }</style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest top-0 sticky border-b border-border-muted z-50">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto w-full">
+<a href="#" class="flex items-center"><img src="logo.svg" alt="BeerTasting" class="h-6 w-auto"></a>
+<div class="hidden md:flex space-x-element-gap items-center">
+<a class="text-on-surface hover:text-primary-container transition-colors duration-200 cursor-pointer font-button text-button" href="#vorteile">Vorteile</a>
+<a class="text-on-surface hover:text-primary-container transition-colors duration-200 cursor-pointer font-button text-button" href="#gastronomien">Gastronomien</a>
+<a class="text-on-surface hover:text-primary-container transition-colors duration-200 cursor-pointer font-button text-button" href="#brauereien">Brauereien</a>
+<a class="text-on-surface hover:text-primary-container transition-colors duration-200 cursor-pointer font-button text-button" href="#kontakt">Kontakt</a>
+<a class="ml-stack-md bg-[#E89B2C] text-on-primary font-button text-button py-2 px-4 rounded-[8px] cursor-pointer hover:opacity-90 transition-opacity duration-200" href="#kontakt">Anfrage senden</a>
+</div>
+</div>
+</nav>
+<!-- Hero -->
+<header class="relative bg-surface-container-lowest py-section-gap min-h-[70vh] flex flex-col items-center justify-center overflow-hidden">
+<div class="relative z-10 max-w-4xl mx-auto px-gutter text-center space-y-stack-md">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">Die digitale BeerTasting Challenge Wien</h1>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl mx-auto">Vier Monate. Wiens Craft-Beer-Szene auf einer Karte. Kein Eventtag, kein Aufwand für Lokale.</p>
+<div class="flex flex-col sm:flex-row gap-element-gap justify-center">
+<a class="bg-[#E89B2C] text-on-primary font-button text-button py-3 px-6 rounded-[8px] text-center hover:opacity-90 transition-opacity" href="#gastronomien">Für Gastronomien</a>
+<a class="border border-on-surface text-on-surface font-button text-button py-3 px-6 rounded-[8px] text-center hover:bg-surface-container-low transition-colors bg-surface-container-lowest" href="#brauereien">Für Brauereien</a>
+</div>
+</div>
+</header>
+<!-- Section 2: So funktioniert die Challenge -->
+<section class="bg-surface-container-lowest px-gutter py-section-gap relative z-10" id="vorteile">
+<div class="max-w-container-max mx-auto space-y-stack-lg">
+<div class="text-center space-y-stack-sm">
+<span class="font-label-caps text-label-caps text-[#E89B2C] uppercase tracking-wider">Mechanik</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">So funktioniert die Challenge</h2>
+<p class="font-body-lg text-body-lg text-text-secondary">Zeitraum: 1. September – 31. Dezember 2026 · Mindestens 40 teilnehmende Wiener Gastronomien.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter max-w-5xl mx-auto">
+<div class="bg-surface-container-low p-6 rounded-[8px] border border-border-muted text-center">
+<span class="material-symbols-outlined text-4xl text-[#E89B2C] mb-4">storefront</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">1. Lokal besuchen</h3>
+<p class="font-body-md text-body-md text-text-secondary">User geht in ein teilnehmendes Wiener Lokal.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-[8px] border border-border-muted text-center">
+<span class="material-symbols-outlined text-4xl text-[#E89B2C] mb-4">sports_bar</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">2. Bier bestellen &amp; verkosten</h3>
+<p class="font-body-md text-body-md text-text-secondary">Reguläre Bestellung zum normalen Preis.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-[8px] border border-border-muted text-center">
+<span class="material-symbols-outlined text-4xl text-[#E89B2C] mb-4">my_location</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">3. In der App bewerten</h3>
+<p class="font-body-md text-body-md text-text-secondary">Geolocation verifiziert den Check-in automatisch.</p>
+</div>
+<div class="bg-surface-container-low p-6 rounded-[8px] border border-border-muted text-center">
+<span class="material-symbols-outlined text-4xl text-[#E89B2C] mb-4">workspace_premium</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">4. Stationen sammeln</h3>
+<p class="font-body-md text-body-md text-text-secondary">Je mehr Lokale, desto höher die Belohnung.</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row justify-center gap-gutter pt-8 max-w-5xl mx-auto">
+<div class="flex-1 bg-surface-container-low p-6 rounded-[8px] border border-border-muted text-center max-w-xs w-full mx-auto">
+<div class="text-4xl mb-2">🥉</div>
+<div class="font-headline-sm text-headline-sm mb-2">Bronze</div>
+<p class="font-body-sm text-body-sm text-text-secondary">10 Stationen · Digitales Badge</p>
+</div>
+<div class="flex-1 bg-surface-container-low p-6 rounded-[8px] border border-border-muted text-center max-w-xs w-full mx-auto">
+<div class="text-4xl mb-2">🥈</div>
+<div class="font-headline-sm text-headline-sm mb-2">Silber</div>
+<p class="font-body-sm text-body-sm text-text-secondary">20 Stationen · Silber-Badge</p>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-6 rounded-[8px] border-2 border-[#E89B2C] text-center relative shadow-sm max-w-xs w-full mx-auto">
+<div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#E89B2C] text-on-primary font-label-caps text-label-caps px-3 py-1 rounded-full whitespace-nowrap">Top-Stufe</div>
+<div class="text-4xl mb-2 mt-2">🥇</div>
+<div class="font-headline-sm text-headline-sm mb-2">Gold</div>
+<p class="font-body-sm text-body-sm text-text-secondary">30 Stationen · Badge + physisches „Challenge Wien"-Blechschild</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Für Gastronomien -->
+<section class="bg-[#F3F3F4] px-gutter py-section-gap" id="gastronomien">
+<div class="max-w-container-max mx-auto flex flex-col items-center gap-stack-lg">
+<div class="text-center max-w-3xl space-y-stack-md">
+<span class="font-label-caps text-label-caps text-[#E89B2C] uppercase tracking-wider">Für Gastronomien</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Mehr Gäste, ohne einen einzigen zusätzlichen Handgriff.</h2>
+<ul class="space-y-4 inline-block text-left mx-auto">
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#E89B2C]">check_circle</span><span class="font-body-md text-body-md">Direkte Sichtbarkeit auf der Challenge-Map für aktive App-User in Wien.</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#E89B2C]">check_circle</span><span class="font-body-md text-body-md">Laufkundschaft, die regulär bestellt.</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#E89B2C]">check_circle</span><span class="font-body-md text-body-md">Öffnungszeiten, Bierangebot und Website direkt in der App hinterlegt.</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#E89B2C]">check_circle</span><span class="font-body-md text-body-md">Kein Personal, kein Material, keine Schulung erforderlich.</span></li>
+</ul>
+</div>
+<div class="w-full max-w-md mx-auto text-left">
+<div class="bg-surface-container-lowest p-8 rounded-[8px] border border-border-muted shadow-sm">
+<h3 class="font-headline-sm text-headline-sm mb-4">Gastro Basis</h3>
+<div class="font-headline-lg-mobile text-[#E89B2C] mb-2">30 € <span class="font-body-md text-text-secondary text-base">/ Monat</span></div>
+<p class="font-body-sm text-body-sm text-text-secondary mb-8">120 € für den gesamten Challenge-Zeitraum (zzgl. USt.).</p>
+<a class="block w-full bg-[#E89B2C] text-on-primary font-button text-button py-3 px-6 rounded-[8px] text-center hover:opacity-90 transition-opacity" href="#kontakt">Als Gastronomie anfragen</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Für Brauereien -->
+<section class="bg-surface-container-lowest px-gutter py-section-gap" id="brauereien">
+<div class="max-w-container-max mx-auto flex flex-col items-center gap-stack-lg">
+<div class="text-center max-w-3xl space-y-stack-md">
+<span class="font-label-caps text-label-caps text-[#E89B2C] uppercase tracking-wider">Für Brauereien</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Mehr Absatz in Partnerlokalen — nachweisbar, ohne eigenen Vertriebsaufwand.</h2>
+<ul class="space-y-4 inline-block text-left mx-auto">
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#E89B2C]">check_circle</span><span class="font-body-md text-body-md">Eigenes Portfolio auf der Challenge-Map hervorgehoben.</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#E89B2C]">check_circle</span><span class="font-body-md text-body-md">Bundle-Einkauf: Brauerei listet eigene Gastronomie-Partner — der Gastronom unterschreibt nichts.</span></li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-[#E89B2C]">check_circle</span><span class="font-body-md text-body-md">Feature im BeerTasting Newsletter (130.000 Abonnenten im DACH-Raum).</span></li>
+</ul>
+<div class="pt-4"><a class="inline-block bg-[#E89B2C] text-on-primary font-button text-button py-3 px-6 rounded-[8px] text-center hover:opacity-90 transition-opacity mt-4" href="#kontakt">Als Brauerei anfragen</a></div>
+</div>
+<div class="w-full max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-element-gap text-left">
+<div class="bg-surface-container-lowest p-6 rounded-[8px] border border-border-muted flex flex-col">
+<h3 class="font-headline-sm text-headline-sm mb-2">Bundle S</h3>
+<p class="font-body-sm text-body-sm text-text-secondary flex-grow mb-6">bis zu 4 Gastronomien (100 €/Lokal).</p>
+<div class="font-headline-sm text-on-surface">400 € <span class="font-body-sm text-text-secondary text-base">/ 4 Monate</span></div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-[8px] border-2 border-[#E89B2C] shadow-sm flex flex-col relative">
+<div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#E89B2C] text-on-primary font-label-caps text-label-caps px-3 py-1 rounded-full whitespace-nowrap">Beliebt</div>
+<h3 class="font-headline-sm text-headline-sm mb-2 mt-2">Bundle L</h3>
+<p class="font-body-sm text-body-sm text-text-secondary flex-grow mb-6">ab 5 Gastronomien (80 €/Lokal).</p>
+<div class="font-headline-sm text-[#E89B2C]">ab 400 € <span class="font-body-sm text-text-secondary text-base">/ 4 Monate</span></div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Alle Preise zzgl. USt.</p>
+</div>
+</section>
+<!-- Section 5: Kontakt -->
+<section class="bg-[#F3F3F4] px-gutter py-section-gap" id="kontakt">
+<div class="max-w-container-max mx-auto space-y-stack-lg">
+<div class="text-center space-y-stack-sm">
+<span class="font-label-caps text-label-caps text-[#E89B2C] uppercase tracking-wider">Kontakt</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Jetzt Teil der Challenge werden</h2>
+</div>
+<div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-lg">
+<!-- Form A: Gastronomie -->
+<div class="bg-surface-container-lowest p-8 rounded-[8px] border border-border-muted shadow-sm">
+<h3 class="font-headline-sm text-headline-sm mb-6 text-center">Anfrage Gastronomie</h3>
+<form class="space-y-4">
+<div><label class="block font-label-caps text-text-secondary mb-1">Name des Lokals</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="text"></div>
+<div><label class="block font-label-caps text-text-secondary mb-1">Ansprechpartner</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="text"></div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div><label class="block font-label-caps text-text-secondary mb-1">E-Mail</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="email"></div>
+<div><label class="block font-label-caps text-text-secondary mb-1">Telefon (optional)</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="tel"></div>
+</div>
+<div><label class="block font-label-caps text-text-secondary mb-1">Bezirk/Adresse</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="text"></div>
+<div><label class="block font-label-caps text-text-secondary mb-1">Nachricht</label><textarea class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" rows="3"></textarea></div>
+<button class="w-full bg-[#E89B2C] text-on-primary font-button text-button py-3 px-6 rounded-[8px] text-center hover:opacity-90 transition-opacity mt-4" type="button">Anfrage senden</button>
+</form>
+</div>
+<!-- Form B: Brauerei -->
+<div class="bg-surface-container-lowest p-8 rounded-[8px] border border-border-muted shadow-sm">
+<h3 class="font-headline-sm text-headline-sm mb-6 text-center">Anfrage Brauerei</h3>
+<form class="space-y-4">
+<div><label class="block font-label-caps text-text-secondary mb-1">Brauerei</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="text"></div>
+<div><label class="block font-label-caps text-text-secondary mb-1">Ansprechpartner</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="text"></div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div><label class="block font-label-caps text-text-secondary mb-1">E-Mail</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="email"></div>
+<div><label class="block font-label-caps text-text-secondary mb-1">Telefon (optional)</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="tel"></div>
+</div>
+<div><label class="block font-label-caps text-text-secondary mb-1">Anzahl Partner-Lokale</label>
+<select class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]">
+<option>Bitte wählen</option><option>1–4</option><option>5+</option>
+</select></div>
+<div><label class="block font-label-caps text-text-secondary mb-1">Nachricht</label><textarea class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" rows="3"></textarea></div>
+<button class="w-full bg-[#E89B2C] text-on-primary font-button text-button py-3 px-6 rounded-[8px] text-center hover:opacity-90 transition-opacity mt-4" type="button">Anfrage senden</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low py-8 border-t border-border-muted">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">BeerTasting</div>
+<div class="font-body-sm text-text-secondary text-center">BeerTasting — eine der größten Bier-Bewertungs-Communities im DACH-Raum.</div>
+<div class="flex gap-4">
+<a class="font-body-sm text-text-secondary hover:text-on-surface transition-colors" href="#">Impressum</a>
+<a class="font-body-sm text-text-secondary hover:text-on-surface transition-colors" href="#">Datenschutz</a>
+</div>
+</div>
+</footer>
+</body></html>
