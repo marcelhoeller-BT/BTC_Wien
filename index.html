@@ -243,34 +243,38 @@
 <!-- Form A: Gastronomie -->
 <div class="bg-surface-container-lowest p-8 rounded-[8px] border border-border-muted shadow-sm">
 <h3 class="font-headline-sm text-headline-sm mb-6 text-center">Anfrage Gastronomie</h3>
-<form class="space-y-4">
-<div><label class="block font-label-caps text-text-secondary mb-1">Name des Lokals</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="text"></div>
-<div><label class="block font-label-caps text-text-secondary mb-1">Ansprechpartner</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="text"></div>
+<form class="space-y-4" action="https://formspree.io/f/mjgqyweg" method="POST">
+<input type="hidden" name="_subject" value="Neue Anfrage – Gastronomie (Challenge Wien)">
+<input type="hidden" name="Anfragetyp" value="Gastronomie">
+<div><label class="block font-label-caps text-text-secondary mb-1">Name des Lokals</label><input name="Name des Lokals" required class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="text"></div>
+<div><label class="block font-label-caps text-text-secondary mb-1">Ansprechpartner</label><input name="Ansprechpartner" required class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="text"></div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div><label class="block font-label-caps text-text-secondary mb-1">E-Mail</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="email"></div>
-<div><label class="block font-label-caps text-text-secondary mb-1">Telefon (optional)</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="tel"></div>
+<div><label class="block font-label-caps text-text-secondary mb-1">E-Mail</label><input name="email" required class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="email"></div>
+<div><label class="block font-label-caps text-text-secondary mb-1">Telefon (optional)</label><input name="Telefon" class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="tel"></div>
 </div>
-<div><label class="block font-label-caps text-text-secondary mb-1">Bezirk/Adresse</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="text"></div>
-<div><label class="block font-label-caps text-text-secondary mb-1">Nachricht</label><textarea class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" rows="3"></textarea></div>
-<button class="w-full bg-[#E89B2C] text-on-primary font-button text-button py-3 px-6 rounded-[8px] text-center hover:opacity-90 transition-opacity mt-4" type="button">Anfrage senden</button>
+<div><label class="block font-label-caps text-text-secondary mb-1">Bezirk/Adresse</label><input name="Bezirk/Adresse" class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="text"></div>
+<div><label class="block font-label-caps text-text-secondary mb-1">Nachricht</label><textarea name="Nachricht" class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" rows="3"></textarea></div>
+<button class="w-full bg-[#E89B2C] text-on-primary font-button text-button py-3 px-6 rounded-[8px] text-center hover:opacity-90 transition-opacity mt-4" type="submit">Anfrage senden</button>
 </form>
 </div>
 <!-- Form B: Brauerei -->
 <div class="bg-surface-container-lowest p-8 rounded-[8px] border border-border-muted shadow-sm">
 <h3 class="font-headline-sm text-headline-sm mb-6 text-center">Anfrage Brauerei</h3>
-<form class="space-y-4">
-<div><label class="block font-label-caps text-text-secondary mb-1">Brauerei</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="text"></div>
-<div><label class="block font-label-caps text-text-secondary mb-1">Ansprechpartner</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="text"></div>
+<form class="space-y-4" action="https://formspree.io/f/maqgeopo" method="POST">
+<input type="hidden" name="_subject" value="Neue Anfrage – Brauerei (Challenge Wien)">
+<input type="hidden" name="Anfragetyp" value="Brauerei">
+<div><label class="block font-label-caps text-text-secondary mb-1">Brauerei</label><input name="Brauerei" required class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="text"></div>
+<div><label class="block font-label-caps text-text-secondary mb-1">Ansprechpartner</label><input name="Ansprechpartner" required class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="text"></div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div><label class="block font-label-caps text-text-secondary mb-1">E-Mail</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="email"></div>
-<div><label class="block font-label-caps text-text-secondary mb-1">Telefon (optional)</label><input class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="tel"></div>
+<div><label class="block font-label-caps text-text-secondary mb-1">E-Mail</label><input name="email" required class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="email"></div>
+<div><label class="block font-label-caps text-text-secondary mb-1">Telefon (optional)</label><input name="Telefon" class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" type="tel"></div>
 </div>
 <div><label class="block font-label-caps text-text-secondary mb-1">Anzahl Partner-Lokale</label>
-<select class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]">
-<option>Bitte wählen</option><option>1–4</option><option>5+</option>
+<select name="Anzahl Partner-Lokale" class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]">
+<option value="">Bitte wählen</option><option value="1–4">1–4</option><option value="5+">5+</option>
 </select></div>
-<div><label class="block font-label-caps text-text-secondary mb-1">Nachricht</label><textarea class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" rows="3"></textarea></div>
-<button class="w-full bg-[#E89B2C] text-on-primary font-button text-button py-3 px-6 rounded-[8px] text-center hover:opacity-90 transition-opacity mt-4" type="button">Anfrage senden</button>
+<div><label class="block font-label-caps text-text-secondary mb-1">Nachricht</label><textarea name="Nachricht" class="w-full border-border-muted rounded-[8px] focus:ring-[#E89B2C] focus:border-[#E89B2C]" rows="3"></textarea></div>
+<button class="w-full bg-[#E89B2C] text-on-primary font-button text-button py-3 px-6 rounded-[8px] text-center hover:opacity-90 transition-opacity mt-4" type="submit">Anfrage senden</button>
 </form>
 </div>
 </div>
