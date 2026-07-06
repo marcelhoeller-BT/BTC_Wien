@@ -138,7 +138,7 @@ html.anim-ready [data-reveal].is-visible { opacity: 1; transform: none; }
 <div class="aurora"></div>
 <div class="relative z-10 max-w-container-max mx-auto">
 <p data-reveal class="text-center font-label-caps text-label-caps uppercase tracking-wider text-[#E8A838] mb-2">Die Plattform hinter der Challenge</p>
-<h2 data-reveal class="text-center font-headline-sm text-headline-sm text-white mb-stack-lg max-w-2xl mx-auto">Keine Neugründung — sondern die größte Bier-Community der DACH-Region.</h2>
+<h2 data-reveal class="text-center font-headline-sm text-headline-sm text-white mb-stack-lg max-w-2xl mx-auto">Keine Neugründung — sondern eine der größten Bier-Communitys im deutschsprachigen Raum.</h2>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
 <div data-reveal class="text-center">
 <div class="font-headline-md text-headline-md text-[#E8A838]"><span data-count="240000" data-suffix="+">0</span></div>
@@ -260,6 +260,31 @@ Mehr Infos
 </div>
 </div>
 </section>
+<!-- Section 2b: Erklärvideo (YouTube Short) -->
+<section class="relative bg-[#0E1330] text-white px-gutter py-section-gap overflow-hidden" id="video">
+<div class="aurora"></div>
+<div class="relative z-10 max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+<!-- Text links -->
+<div data-reveal class="space-y-stack-md">
+<span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold">In 30 Sekunden erklärt</span>
+<h2 class="font-headline-md text-headline-md text-white">Die Challenge im Kurzvideo.</h2>
+<p class="font-body-lg text-body-lg text-white/70">Vom Lokalbesuch bis zum Gold-Badge — schnell erklärt, wie die BeerTasting Gastro Challenge Wien für eure Gäste funktioniert.</p>
+<ul class="space-y-3 pt-2">
+<li class="flex items-start gap-3"><span class="block w-5 h-px bg-[#E8A838] mt-3 shrink-0"></span><span class="font-body-md text-body-md text-white/90">Lokal besuchen, Bier bewerten, Stationen sammeln.</span></li>
+<li class="flex items-start gap-3"><span class="block w-5 h-px bg-[#E8A838] mt-3 shrink-0"></span><span class="font-body-md text-body-md text-white/90">Alles direkt in der App — kein Aufwand fürs Lokal.</span></li>
+</ul>
+</div>
+<!-- Video rechts -->
+<div data-reveal class="flex justify-center">
+<div class="relative">
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none"><div class="w-[360px] h-[360px] max-w-[85vw] max-h-[85vw] rounded-full bg-[#E8A838] opacity-[0.14] blur-3xl"></div></div>
+<div class="relative z-10 rounded-[28px] overflow-hidden border border-white/10 shadow-2xl w-[280px] sm:w-[300px] aspect-[9/16] bg-black">
+<iframe class="w-full h-full block" src="https://www.youtube-nocookie.com/embed/NHX5ODtx6e0?rel=0&amp;modestbranding=1&amp;playsinline=1" title="BeerTasting Gastro Challenge Wien – Erklärvideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+</div>
+</div>
+</div>
+</section>
 <!-- Section 3: Für Gastronomien -->
 <section class="bg-[#F3F3F4] px-gutter py-section-gap" id="gastronomien">
 <div class="max-w-container-max mx-auto flex flex-col items-center gap-stack-lg">
@@ -374,6 +399,10 @@ Mehr Infos
 </div>
 <div><label class="block font-label-caps text-text-secondary mb-1">Bezirk/Adresse</label><input name="Bezirk/Adresse" class="w-full border-border-muted rounded-[8px] focus:ring-[#E8A838] focus:border-[#E8A838]" type="text"></div>
 <div><label class="block font-label-caps text-text-secondary mb-1">Nachricht</label><textarea name="Nachricht" class="w-full border-border-muted rounded-[8px] focus:ring-[#E8A838] focus:border-[#E8A838]" rows="3"></textarea></div>
+<div class="flex items-start gap-2 pt-1">
+<input type="checkbox" id="gastro-consent" name="Datenschutz akzeptiert" value="ja" required class="mt-1 shrink-0 rounded border-border-muted text-[#E8A838] focus:ring-[#E8A838]">
+<span class="font-body-sm text-body-sm text-text-secondary">Ich habe die <button type="button" onclick="openDatenschutz()" class="text-[#E8A838] underline hover:opacity-80">Datenschutzerklärung</button> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu.</span>
+</div>
 <p id="gastro-error" class="hidden font-body-sm text-body-sm text-danger-red text-center">Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie an info@kalea.com.</p>
 <button class="w-full bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] text-center hover:opacity-90 transition-opacity mt-4" type="submit">Anfrage senden</button>
 </form>
@@ -400,6 +429,10 @@ Mehr Infos
 <option value="">Bitte wählen</option><option value="1–3">1–3 (Bundle S)</option><option value="5+">5+ (Bundle L)</option><option value="4 / individuell">4 / individuell</option>
 </select></div>
 <div><label class="block font-label-caps text-text-secondary mb-1">Nachricht</label><textarea name="Nachricht" class="w-full border-border-muted rounded-[8px] focus:ring-[#E8A838] focus:border-[#E8A838]" rows="3"></textarea></div>
+<div class="flex items-start gap-2 pt-1">
+<input type="checkbox" id="brauerei-consent" name="Datenschutz akzeptiert" value="ja" required class="mt-1 shrink-0 rounded border-border-muted text-[#E8A838] focus:ring-[#E8A838]">
+<span class="font-body-sm text-body-sm text-text-secondary">Ich habe die <button type="button" onclick="openDatenschutz()" class="text-[#E8A838] underline hover:opacity-80">Datenschutzerklärung</button> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu.</span>
+</div>
 <p id="brauerei-error" class="hidden font-body-sm text-body-sm text-danger-red text-center">Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie an info@kalea.com.</p>
 <button class="w-full bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] text-center hover:opacity-90 transition-opacity mt-4" type="submit">Anfrage senden</button>
 </form>
@@ -411,7 +444,7 @@ Mehr Infos
 <footer class="bg-surface-container-low py-8 border-t border-border-muted">
 <div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-4">
 <div class="flex items-center"><img src="logo.svg" alt="BeerTasting" class="h-6 w-auto"></div>
-<div class="font-body-sm text-text-secondary text-center">BeerTasting - die größte Bier-Bewertungs-Community in der DACH-Region.</div>
+<div class="font-body-sm text-text-secondary text-center">BeerTasting – eine der größten Bier-Bewertungs-Communitys im deutschsprachigen Raum.</div>
 <div class="flex gap-4">
 <button type="button" onclick="openImpressum()" class="font-body-sm text-text-secondary hover:text-on-surface transition-colors cursor-pointer">Impressum</button>
 <button type="button" onclick="openDatenschutz()" class="font-body-sm text-text-secondary hover:text-on-surface transition-colors cursor-pointer">Datenschutz</button>
