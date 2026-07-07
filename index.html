@@ -44,21 +44,31 @@ html.anim-ready [data-reveal].is-visible { opacity: 1; transform: none; }
 @keyframes shine { to { left: 130%; } }
 /* --- Count-up Zahlen: kein Umbruch --- */
 [data-count] { display: inline-block; }
+/* --- Hero-Phone Glow (atmend) --- */
+@keyframes glowPulse { 0%, 100% { opacity: 0.08; transform: scale(1); } 50% { opacity: 0.16; transform: scale(1.08); } }
+.hero-glow { animation: glowPulse 6s ease-in-out infinite; }
+/* --- Live-Dot Ping --- */
+@keyframes dotPing { 0% { transform: scale(1); opacity: 0.7; } 80%, 100% { transform: scale(2.6); opacity: 0; } }
+.dot-ping .ping-ring { animation: dotPing 2.4s cubic-bezier(0.2,0.6,0.4,1) infinite; }
 /* --- Reduced Motion --- */
 @media (prefers-reduced-motion: reduce) {
   html.anim-ready [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
   .aurora { animation: none; }
   .btn-shine:hover::after { animation: none; }
   #to-top { transition: none; }
+  .hero-glow { animation: none; }
+  .dot-ping .ping-ring { animation: none; }
 }
 .hero-phone img { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s ease; filter: drop-shadow(0 18px 30px rgba(0,0,0,0.16)); will-change: transform; }
-.hero-phone:hover img { transform: translateY(-8px) scale(1.02); filter: drop-shadow(0 32px 44px rgba(0,0,0,0.24)); }
-.hero-phone .annotation { opacity: 0; transform: translateX(0); transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); pointer-events: none; }
-.hero-phone:hover .annotation { opacity: 1; }
-.hero-phone:hover .annotation:nth-child(2) { transition-delay: 0.05s; }
-.hero-phone:hover .annotation:nth-child(3) { transition-delay: 0.12s; }
-.hero-phone:hover .annotation:nth-child(4) { transition-delay: 0.19s; }
-.hero-phone:hover .annotation:nth-child(5) { transition-delay: 0.26s; }
+.hero-phone:hover img { transform: translateY(-8px) scale(1.02); filter: drop-shadow(0 32px 44px rgba(94,58,0,0.28)); }
+.hero-phone .annotation { opacity: 0; transform: translateY(6px); transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); pointer-events: none; }
+.hero-phone.is-visible .annotation, .hero-phone:hover .annotation { opacity: 1; transform: translateY(0); }
+.hero-phone .annotation:nth-child(2) { transition-delay: 0.1s; }
+.hero-phone .annotation:nth-child(3) { transition-delay: 0.22s; }
+.hero-phone .annotation:nth-child(4) { transition-delay: 0.34s; }
+.hero-phone .annotation:nth-child(5) { transition-delay: 0.46s; }
+.hero-phone .leader-line { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); transform: scaleX(0); }
+.hero-phone.is-visible .leader-line, .hero-phone:hover .leader-line { transform: scaleX(1); }
 @media (max-width: 1023px) { .hero-phone .annotation { display: none; } }</style>
 </head>
 <body class="bg-surface-container-lowest text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
@@ -139,26 +149,42 @@ html.anim-ready [data-reveal].is-visible { opacity: 1; transform: none; }
 <!-- Phone links -->
 <div data-reveal class="relative flex justify-center pt-16 lg:pt-12">
 <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-<div class="w-[420px] h-[420px] max-w-[85vw] max-h-[85vw] rounded-full bg-[#E8A838] opacity-[0.08] blur-3xl"></div>
+<div class="hero-glow w-[420px] h-[420px] max-w-[85vw] max-h-[85vw] rounded-full bg-[#E8A838] blur-3xl"></div>
 </div>
 <div class="hero-phone group relative z-10">
 <img src="Hero.png" alt="BeerTasting Challenge Wien – Live-Ansicht in der App mit Karte, Countdown und Stationen" class="w-full max-w-[300px] h-auto mx-auto block">
-<!-- Annotationen: erscheinen beim Hover -->
+<!-- Annotationen: erscheinen beim Einblenden ins Bild, Hover als Bonus -->
 <div class="annotation absolute top-[14%] right-[-8px] lg:right-[-40px] flex items-center gap-2">
-<span class="font-body-sm text-body-sm text-on-surface bg-[#E8A838] px-2 py-1 rounded shadow-sm whitespace-nowrap">Countdown zur Preisvergabe</span>
-<span class="block w-6 h-px bg-[#E8A838]"></span>
+<span class="dot-ping relative flex h-2 w-2 shrink-0">
+<span class="ping-ring absolute inline-flex h-full w-full rounded-full bg-[#E8A838] opacity-70"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-[#E8A838]"></span>
+</span>
+<span class="leader-line block w-5 h-px bg-[#E8A838] shrink-0 origin-left"></span>
+<span class="inline-flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface bg-[#E8A838] pl-2 pr-3 py-1.5 rounded-full shadow-md whitespace-nowrap"><span class="material-symbols-outlined" style="font-size:16px">schedule</span>Countdown zur Preisvergabe</span>
 </div>
 <div class="annotation absolute top-[63%] left-[-8px] lg:left-[-44px] flex items-center gap-2 flex-row-reverse">
-<span class="font-body-sm text-body-sm text-on-surface bg-[#E8A838] px-2 py-1 rounded shadow-sm whitespace-nowrap">Live-Status</span>
-<span class="block w-6 h-px bg-[#E8A838]"></span>
+<span class="dot-ping relative flex h-2 w-2 shrink-0">
+<span class="ping-ring absolute inline-flex h-full w-full rounded-full bg-[#E8A838] opacity-70"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-[#E8A838]"></span>
+</span>
+<span class="leader-line block w-5 h-px bg-[#E8A838] shrink-0 origin-right"></span>
+<span class="inline-flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface bg-[#E8A838] pl-2 pr-3 py-1.5 rounded-full shadow-md whitespace-nowrap"><span class="material-symbols-outlined" style="font-size:16px">wifi_tethering</span>Live-Status</span>
 </div>
 <div class="annotation absolute top-[80%] right-[-8px] lg:right-[-52px] flex items-center gap-2">
-<span class="font-body-sm text-body-sm text-on-surface bg-[#E8A838] px-2 py-1 rounded shadow-sm whitespace-nowrap">Alle Stationen</span>
-<span class="block w-6 h-px bg-[#E8A838]"></span>
+<span class="dot-ping relative flex h-2 w-2 shrink-0">
+<span class="ping-ring absolute inline-flex h-full w-full rounded-full bg-[#E8A838] opacity-70"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-[#E8A838]"></span>
+</span>
+<span class="leader-line block w-5 h-px bg-[#E8A838] shrink-0 origin-left"></span>
+<span class="inline-flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface bg-[#E8A838] pl-2 pr-3 py-1.5 rounded-full shadow-md whitespace-nowrap"><span class="material-symbols-outlined" style="font-size:16px">location_on</span>Alle Stationen</span>
 </div>
 <div class="annotation absolute top-[90%] left-[-8px] lg:left-[-44px] flex items-center gap-2 flex-row-reverse">
-<span class="font-body-sm text-body-sm text-on-surface bg-[#E8A838] px-2 py-1 rounded shadow-sm whitespace-nowrap">Teilnehmer</span>
-<span class="block w-6 h-px bg-[#E8A838]"></span>
+<span class="dot-ping relative flex h-2 w-2 shrink-0">
+<span class="ping-ring absolute inline-flex h-full w-full rounded-full bg-[#E8A838] opacity-70"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-[#E8A838]"></span>
+</span>
+<span class="leader-line block w-5 h-px bg-[#E8A838] shrink-0 origin-right"></span>
+<span class="inline-flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface bg-[#E8A838] pl-2 pr-3 py-1.5 rounded-full shadow-md whitespace-nowrap"><span class="material-symbols-outlined" style="font-size:16px">group</span>Teilnehmer</span>
 </div>
 </div>
 </div>
@@ -573,6 +599,21 @@ function closeMobileMenu(){var m=document.getElementById('mobile-menu');var b=do
       if(p < 1){ requestAnimationFrame(step); } else { el.textContent = finalText; }
     }
     requestAnimationFrame(step);
+  }
+  var heroPhone = document.querySelector('.hero-phone');
+  if(heroPhone){
+    if(reduce || !('IntersectionObserver' in window)){
+      heroPhone.classList.add('is-visible');
+    } else {
+      var po = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(!e.isIntersecting) return;
+          heroPhone.classList.add('is-visible');
+          po.unobserve(heroPhone);
+        });
+      }, { threshold: 0.4 });
+      po.observe(heroPhone);
+    }
   }
   var counts = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
   if(!('IntersectionObserver' in window)){
