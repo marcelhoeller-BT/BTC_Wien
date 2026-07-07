@@ -19,6 +19,49 @@
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/brandon-text" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet die Teilnahme?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Für Gastronomien 100 € pro Monat, ein laufendes Abo, das du monatlich kündigen kannst. Brauereien buchen Bundles ab 300 €/Monat und decken damit mehrere Partnerlokale ab. Alle Preise zzgl. USt." }
+    },
+    {
+      "@type": "Question",
+      "name": "Welcher Aufwand entsteht für mein Lokal?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Keiner. Kein zusätzliches Personal, kein Material, keine Schulung. Deine Gäste bestellen regulär und bewerten selbst in der App. Dein Lokal erscheint einfach auf der Challenge-Karte." }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie wird der Besuch verifiziert?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Ganz automatisch: Beim Bewerten prüft die App den Standort und zählt die Station als besucht. Du musst nichts abstempeln oder scannen." }
+    },
+    {
+      "@type": "Question",
+      "name": "Wann läuft die Challenge?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Start ist der 1. September 2026. Danach läuft die Challenge dauerhaft weiter, ganz ohne Enddatum. Jedes Jahr gibt es ein Gesamt-Ranking mit Preisen für die aktivsten Teilnehmer:innen, gesammelte Stationen und Badges bleiben erhalten. Mindestens 40 Wiener Gastronomien sind zum Start mit dabei." }
+    },
+    {
+      "@type": "Question",
+      "name": "Kommt die Challenge auch in andere Städte?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Wien ist der Auftakt. Das Format ist komplett digital, weitere Städte sind bereits in Planung. Hast du Partnerlokale in mehreren Städten? Sprich uns gern früh an." }
+    },
+    {
+      "@type": "Question",
+      "name": "Was bedeutet der Bundle-Einkauf für Brauereien?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Du listest deine eigenen Gastronomie-Partner und übernimmst die Koordination, der Gastronom unterschreibt nichts. So wird dein Portfolio in allen Partnerlokalen auf der Challenge-Karte sichtbar. Zusätzlich bekommst du Zugang zum Brauerei-Back-End mit Analysen und Bewertungen." }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie melde ich mich an?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Über das passende Formular weiter unten. Wir melden uns kurzfristig mit allen Details und übernehmen die Einrichtung deines Lokals in der App." }
+    }
+  ]
+}
+</script>
 <script>document.documentElement.classList.add('anim-ready');</script>
 <style>.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
 html { scroll-padding-top: 88px; }
@@ -79,6 +122,7 @@ html.anim-ready [data-reveal].is-visible { opacity: 1; transform: none; }
 <!-- Desktop-Nav -->
 <div class="hidden md:flex space-x-element-gap items-center">
 <a class="text-on-surface hover:opacity-60 transition-opacity duration-200 cursor-pointer font-button text-button" href="#vorteile">So funktioniert's</a>
+<a class="text-on-surface hover:opacity-60 transition-opacity duration-200 cursor-pointer font-button text-button" href="#video">Video</a>
 <a class="text-on-surface hover:opacity-60 transition-opacity duration-200 cursor-pointer font-button text-button" href="#gastronomien">Gastronomien</a>
 <a class="text-on-surface hover:opacity-60 transition-opacity duration-200 cursor-pointer font-button text-button" href="#brauereien">Brauereien</a>
 <a class="text-on-surface hover:opacity-60 transition-opacity duration-200 cursor-pointer font-button text-button" href="#kontakt">Kontakt</a>
@@ -93,6 +137,7 @@ html.anim-ready [data-reveal].is-visible { opacity: 1; transform: none; }
 <div id="mobile-menu" class="hidden md:hidden border-t border-border-muted bg-surface-container-lowest">
 <div class="flex flex-col px-gutter py-2">
 <a class="text-on-surface hover:opacity-60 transition-opacity py-3 font-button text-button" href="#vorteile" onclick="closeMobileMenu()">So funktioniert's</a>
+<a class="text-on-surface hover:opacity-60 transition-opacity py-3 font-button text-button border-t border-border-muted" href="#video" onclick="closeMobileMenu()">Video</a>
 <a class="text-on-surface hover:opacity-60 transition-opacity py-3 font-button text-button border-t border-border-muted" href="#gastronomien" onclick="closeMobileMenu()">Gastronomien</a>
 <a class="text-on-surface hover:opacity-60 transition-opacity py-3 font-button text-button border-t border-border-muted" href="#brauereien" onclick="closeMobileMenu()">Brauereien</a>
 <a class="text-on-surface hover:opacity-60 transition-opacity py-3 font-button text-button border-t border-border-muted" href="#kontakt" onclick="closeMobileMenu()">Kontakt</a>
@@ -200,7 +245,7 @@ html.anim-ready [data-reveal].is-visible { opacity: 1; transform: none; }
 <li class="flex items-start gap-3"><span class="block w-5 h-px bg-[#E8A838] mt-3 shrink-0"></span><span class="font-body-md text-body-md text-on-surface"><span class="font-bold">Teilnehmer</span>: sieh, wer dabei ist.</span></li>
 </ul>
 <div class="pt-2">
-<a href="BTC%20Wien%202026%20Info%20Sheet.pdf" download class="btn-shine inline-flex items-center gap-2 bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] hover:opacity-90 transition-opacity">
+<a href="BTC-Wien-2026-Info-Sheet.pdf" download class="btn-shine inline-flex items-center gap-2 bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] hover:opacity-90 transition-opacity">
 <span class="material-symbols-outlined" style="font-size:20px">download</span>
 Mehr Infos
 </a>
@@ -241,18 +286,18 @@ Mehr Infos
 </div>
 <div class="flex flex-col sm:flex-row justify-center gap-gutter pt-8 max-w-5xl mx-auto">
 <div data-reveal class="card-hover flex-1 bg-surface-container-low p-6 rounded-[8px] border border-border-muted text-center max-w-xs w-full mx-auto">
-<img src="Level%3DBronze.png" alt="BeerTasting Challenge Wien – Bronze-Badge" class="w-24 h-24 object-contain mx-auto mb-2">
+<img src="Level-Bronze.png" alt="BeerTasting Challenge Wien – Bronze-Badge" class="w-24 h-24 object-contain mx-auto mb-2">
 <div class="font-headline-sm text-headline-sm mb-2">Bronze</div>
 <p class="font-body-sm text-body-sm text-text-secondary">10 Stationen · Digitales Badge</p>
 </div>
 <div data-reveal class="card-hover flex-1 bg-surface-container-low p-6 rounded-[8px] border border-border-muted text-center max-w-xs w-full mx-auto">
-<img src="Level%3DSilver.png" alt="BeerTasting Challenge Wien – Silber-Badge" class="w-24 h-24 object-contain mx-auto mb-2">
+<img src="Level-Silver.png" alt="BeerTasting Challenge Wien – Silber-Badge" class="w-24 h-24 object-contain mx-auto mb-2">
 <div class="font-headline-sm text-headline-sm mb-2">Silber</div>
 <p class="font-body-sm text-body-sm text-text-secondary">20 Stationen · Silber-Badge</p>
 </div>
 <div data-reveal class="card-hover flex-1 bg-surface-container-lowest p-6 rounded-[8px] border-2 border-[#E8A838] text-center relative shadow-sm max-w-xs w-full mx-auto">
 <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#E8A838] text-on-surface font-label-caps text-label-caps px-3 py-1 rounded-full whitespace-nowrap">Top-Stufe</div>
-<img src="Level%3DGold.png" alt="BeerTasting Challenge Wien – Gold-Badge" class="w-24 h-24 object-contain mx-auto mb-2 mt-2">
+<img src="Level-Gold.png" alt="BeerTasting Challenge Wien – Gold-Badge" class="w-24 h-24 object-contain mx-auto mb-2 mt-2">
 <div class="font-headline-sm text-headline-sm mb-2">Gold</div>
 <p class="font-body-sm text-body-sm text-text-secondary">30 Stationen · Badge + physisches „Challenge Wien"-Blechschild</p>
 </div>
@@ -387,14 +432,10 @@ Mehr Infos
 <!-- Form A: Gastronomie -->
 <div data-reveal class="bg-surface-container-lowest p-8 rounded-[8px] border border-border-muted shadow-sm">
 <h3 class="font-headline-sm text-headline-sm mb-6 text-center">Anfrage Gastronomie</h3>
-<div id="gastro-success" class="hidden text-center py-8">
-<span class="material-symbols-outlined text-[#E8A838]" style="font-size:48px">check_circle</span>
-<p class="font-headline-sm text-headline-sm text-on-surface mt-3">Vielen Dank!</p>
-<p class="font-body-md text-body-md text-text-secondary mt-2">Deine Anfrage ist bei uns eingegangen. Wir melden uns in Kürze bei dir.</p>
-</div>
 <form id="gastro-form" class="space-y-4" action="https://formspree.io/f/mjgqyweg" method="POST">
 <input type="hidden" name="_subject" value="Neue Anfrage – Gastronomie (Challenge Wien)">
 <input type="hidden" name="Anfragetyp" value="Gastronomie">
+<input type="hidden" name="_next" value="https://btc-wien.vercel.app/danke-gastronomie.html">
 <div><label class="block font-label-caps text-text-secondary mb-1">Name des Lokals</label><input name="Name des Lokals" required class="w-full border-border-muted rounded-[8px] focus:ring-[#E8A838] focus:border-[#E8A838]" type="text"></div>
 <div><label class="block font-label-caps text-text-secondary mb-1">Ansprechpartner</label><input name="Ansprechpartner" required class="w-full border-border-muted rounded-[8px] focus:ring-[#E8A838] focus:border-[#E8A838]" type="text"></div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -405,7 +446,7 @@ Mehr Infos
 <div><label class="block font-label-caps text-text-secondary mb-1">Nachricht</label><textarea name="Nachricht" class="w-full border-border-muted rounded-[8px] focus:ring-[#E8A838] focus:border-[#E8A838]" rows="3"></textarea></div>
 <div class="flex items-start gap-2 pt-1">
 <input type="checkbox" id="gastro-consent" name="Datenschutz akzeptiert" value="ja" required class="mt-1 shrink-0 rounded border-border-muted text-[#E8A838] focus:ring-[#E8A838]">
-<span class="font-body-sm text-body-sm text-text-secondary">Ich habe die <button type="button" onclick="openDatenschutz()" class="text-[#E8A838] underline hover:opacity-80">Datenschutzerklärung</button> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu.</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener" class="text-[#E8A838] underline hover:opacity-80">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu.</span>
 </div>
 <p id="gastro-error" class="hidden font-body-sm text-body-sm text-error text-center">Etwas ist schiefgelaufen. Bitte versuch es noch einmal oder schreib uns an info@kalea.com.</p>
 <button class="w-full bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] text-center hover:opacity-90 transition-opacity mt-4" type="submit">Anfrage senden</button>
@@ -414,14 +455,10 @@ Mehr Infos
 <!-- Form B: Brauerei -->
 <div data-reveal class="bg-surface-container-lowest p-8 rounded-[8px] border border-border-muted shadow-sm">
 <h3 class="font-headline-sm text-headline-sm mb-6 text-center">Anfrage Brauerei</h3>
-<div id="brauerei-success" class="hidden text-center py-8">
-<span class="material-symbols-outlined text-[#E8A838]" style="font-size:48px">check_circle</span>
-<p class="font-headline-sm text-headline-sm text-on-surface mt-3">Vielen Dank!</p>
-<p class="font-body-md text-body-md text-text-secondary mt-2">Deine Anfrage ist bei uns eingegangen. Wir melden uns in Kürze bei dir.</p>
-</div>
 <form id="brauerei-form" class="space-y-4" action="https://formspree.io/f/maqgeopo" method="POST">
 <input type="hidden" name="_subject" value="Neue Anfrage – Brauerei (Challenge Wien)">
 <input type="hidden" name="Anfragetyp" value="Brauerei">
+<input type="hidden" name="_next" value="https://btc-wien.vercel.app/danke-brauerei.html">
 <div><label class="block font-label-caps text-text-secondary mb-1">Brauerei</label><input name="Brauerei" required class="w-full border-border-muted rounded-[8px] focus:ring-[#E8A838] focus:border-[#E8A838]" type="text"></div>
 <div><label class="block font-label-caps text-text-secondary mb-1">Ansprechpartner</label><input name="Ansprechpartner" required class="w-full border-border-muted rounded-[8px] focus:ring-[#E8A838] focus:border-[#E8A838]" type="text"></div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -435,7 +472,7 @@ Mehr Infos
 <div><label class="block font-label-caps text-text-secondary mb-1">Nachricht</label><textarea name="Nachricht" class="w-full border-border-muted rounded-[8px] focus:ring-[#E8A838] focus:border-[#E8A838]" rows="3"></textarea></div>
 <div class="flex items-start gap-2 pt-1">
 <input type="checkbox" id="brauerei-consent" name="Datenschutz akzeptiert" value="ja" required class="mt-1 shrink-0 rounded border-border-muted text-[#E8A838] focus:ring-[#E8A838]">
-<span class="font-body-sm text-body-sm text-text-secondary">Ich habe die <button type="button" onclick="openDatenschutz()" class="text-[#E8A838] underline hover:opacity-80">Datenschutzerklärung</button> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu.</span>
+<span class="font-body-sm text-body-sm text-text-secondary">Ich habe die <a href="datenschutz.html" target="_blank" rel="noopener" class="text-[#E8A838] underline hover:opacity-80">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu.</span>
 </div>
 <p id="brauerei-error" class="hidden font-body-sm text-body-sm text-error text-center">Etwas ist schiefgelaufen. Bitte versuch es noch einmal oder schreib uns an info@kalea.com.</p>
 <button class="w-full bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] text-center hover:opacity-90 transition-opacity mt-4" type="submit">Anfrage senden</button>
@@ -450,8 +487,8 @@ Mehr Infos
 <div class="flex items-center"><img src="logo.svg" alt="BeerTasting" class="h-6 w-auto"></div>
 <div class="font-body-sm text-text-secondary text-center">BeerTasting. Eine der größten Bier-Bewertungs-Communitys im deutschsprachigen Raum.</div>
 <div class="flex gap-4">
-<button type="button" onclick="openImpressum()" class="font-body-sm text-text-secondary hover:text-on-surface transition-colors cursor-pointer">Impressum</button>
-<button type="button" onclick="openDatenschutz()" class="font-body-sm text-text-secondary hover:text-on-surface transition-colors cursor-pointer">Datenschutz</button>
+<a href="impressum.html" class="font-body-sm text-text-secondary hover:text-on-surface transition-colors">Impressum</a>
+<a href="datenschutz.html" class="font-body-sm text-text-secondary hover:text-on-surface transition-colors">Datenschutz</a>
 </div>
 </div>
 </footer>
@@ -459,106 +496,6 @@ Mehr Infos
 <button type="button" id="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Nach oben scrollen" class="fixed bottom-6 right-6 z-[90] bg-[#E8A838] text-on-surface w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:opacity-90">
 <span class="material-symbols-outlined">arrow_upward</span>
 </button>
-<!-- Impressum Modal -->
-<div id="impressum-overlay" onclick="closeImpressum(event)" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/50 px-gutter">
-<div onclick="event.stopPropagation()" class="bg-surface-container-lowest rounded-[8px] shadow-xl max-w-md w-full p-8 relative max-h-[85vh] overflow-y-auto">
-<button type="button" onclick="closeImpressum()" aria-label="Schließen" class="absolute top-4 right-4 text-text-secondary hover:text-on-surface transition-colors">
-<span class="material-symbols-outlined">close</span>
-</button>
-<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6">Impressum</h3>
-<div class="font-body-md text-body-md text-on-surface space-y-4">
-<div>
-<p class="font-bold">KALEA GmbH</p>
-<p>Biberngasse 31</p>
-<p>A-5020 Salzburg</p>
-</div>
-<div class="text-text-secondary">
-<p>Tel: +43 662 820 474 0</p>
-<p>Fax: +43 662 829 402</p>
-<p>E-Mail: <a href="mailto:info@kalea.com" class="text-[#E8A838] hover:underline">info@kalea.com</a></p>
-<p>Web: <a href="https://www.kalea.com" target="_blank" rel="noopener" class="text-[#E8A838] hover:underline">www.kalea.com</a></p>
-</div>
-<div class="text-text-secondary">
-<p>FN 362248v, LG Salzburg</p>
-<p>Persönlich haftender Gesellschafter:</p>
-<p>Geschäftsführer Mag. Peter Reimann</p>
-<p>UID-Nr.: ATU 66418806</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Datenschutz Modal -->
-<div id="datenschutz-overlay" onclick="closeDatenschutz(event)" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/50 px-gutter py-8">
-<div onclick="event.stopPropagation()" class="bg-surface-container-lowest rounded-[8px] shadow-xl max-w-2xl w-full p-8 relative max-h-[85vh] overflow-y-auto">
-<button type="button" onclick="closeDatenschutz()" aria-label="Schließen" class="absolute top-4 right-4 text-text-secondary hover:text-on-surface transition-colors bg-surface-container-lowest">
-<span class="material-symbols-outlined">close</span>
-</button>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Datenschutzerklärung</h3>
-<p class="font-body-sm text-body-sm text-text-secondary mb-6">der KALEA GmbH, Biberngasse 31, 5020 Salzburg · FN 362248v LG Salzburg · ATU 66418806<br>Stand: 07. Juli 2026</p>
-<div class="font-body-md text-body-md text-on-surface space-y-6">
-
-<div class="space-y-2">
-<h4 class="font-headline-sm text-headline-sm text-on-surface">1. Generelles</h4>
-<p>Diese Datenschutzerklärung und die Cookie-Richtlinie beziehen sich auf diese Website (BeerTasting Digital Challenge Wien) sowie alle anderen Webseiten und Apps, welche von der KALEA GmbH betrieben werden und der Promotion und dem Verkauf unserer Produkte gewidmet sind.</p>
-<p>Wir, die KALEA GmbH, Biberngasse 31, 5020 Salzburg, Austria („KALEA GmbH"), nutzen Ihre Informationen sorgfältig und handeln gemäß der geltenden Gesetze und Vorschriften.</p>
-<p>Wir empfehlen Ihnen, diese Datenschutzerklärung und die Cookie-Richtlinie sorgfältig durchzulesen. Sie enthalten wichtige Informationen über die Nutzung Ihrer persönlichen Daten, die wir über die Webseiten und Apps erhalten. Durch die Nutzung der Dienstleistungen dieser Website erklären Sie sich mit unserer Datenschutz- und Cookie-Erklärung einverstanden.</p>
-</div>
-
-<div class="space-y-2">
-<h4 class="font-headline-sm text-headline-sm text-on-surface">2. Datenschutzerklärung</h4>
-<p class="font-bold">Welche persönlichen Daten werden gesammelt?</p>
-<p>Während Sie unsere Website besuchen, können wir bestimmte persönliche Daten erfragen oder auf andere Weise sammeln. Diese Daten können umfassen: Name, Geburtsdatum, Geschlecht, Adresse, Telefonnummer, Verbrauchertyp (privat oder beruflich) und Zahlungsdetails. Zusätzlich können wir persönliche Daten durch Cookies oder ähnliche Verfahren sammeln, z. B. Ihre IP-Adresse, Cookie-ID, Standort, die Websites, die Sie während des Besuchs unserer Website besucht haben, und die Werbungen, die Sie angesehen haben.</p>
-<p class="font-bold pt-2">Wie verwenden wir Ihre persönlichen Daten?</p>
-<p>Ihre Daten können für folgende Zwecke verwendet werden:</p>
-<ul class="list-disc pl-5 space-y-1">
-<li><span class="font-bold">Bearbeitung Ihrer Bestellung:</span> Wenn Sie eine Bestellung aufgeben, nutzen wir Ihre Daten für die Erfüllung und Abwicklung Ihrer Bestellung.</li>
-<li><span class="font-bold">Customer Service:</span> um auf Ihre Nachrichten zu antworten.</li>
-<li><span class="font-bold">Marketing:</span> um den Inhalt unserer Website und unserer Angebote auf der Website oder auf anderen Marketingkanälen an Ihre persönlichen Interessen anzupassen.</li>
-<li><span class="font-bold">Newsletter:</span> um Ihnen Informationen über unser Sortiment, unsere Angebote und Dienstleistungen zuzusenden. Sie können den Newsletter jederzeit über einen Link in der E-Mail abbestellen, diesen Wunsch über Ihr Nutzerkonto angeben oder uns diesbezüglich kontaktieren.</li>
-<li><span class="font-bold">Verbesserungen an der Website:</span> um die Nutzung der Website zu analysieren, sodass wir unsere Dienstleistungen verbessern und Probleme beheben können.</li>
-<li><span class="font-bold">Weitere Zwecke:</span> um gesetzliche Vorschriften einzuhalten, z. B. hinsichtlich der Verkaufsverwaltung und dem Verhindern von Betrug oder Geldwäsche.</li>
-</ul>
-<p class="font-bold pt-2">Mit welchen dritten Personen werden Ihre persönlichen Daten geteilt?</p>
-<p>Wir arbeiten mit Dienstleistern zusammen, die bestimmte Daten für uns verarbeiten. Dies wird nur unter strenger Berücksichtigung des Datenschutzgesetzes betrieben. Wir haben mit unseren Dienstleistern Vereinbarungen über die Datenverarbeitung getroffen, um alle geltenden gesetzlichen Anforderungen zu erfüllen. Um unsere Website zu betreiben und Produkte und Dienstleistungen anzubieten, teilen wir Informationen möglicherweise mit den folgenden Personen:</p>
-<ul class="list-disc pl-5 space-y-1">
-<li>Personen der KALEA GmbH, aufgrund eines gemeinsamen IT-Systems, um durch die Website erhaltene Daten zu sichern;</li>
-<li>Dienstleister, die die Informationen benötigen, um Ihnen unsere Produkte und Dienstleistungen anzubieten (z. B. Versandunternehmen zur Lieferung bestellter Waren, Kreditinstitute und Zahlungsdienstleister zur Abwicklung von Zahlungen);</li>
-<li>Werbepartner, die unsere Website für Sie interessanter gestalten;</li>
-<li>Unabhängige Inkassounternehmen, um ausstehende Zahlungen einzufordern;</li>
-<li>Ermittlungsbehörden aufgrund der Pflicht, rechtlichen Verpflichtungen oder gerichtlichen Anordnungen nachzukommen.</li>
-</ul>
-<p>Diese Personen können ihren Sitz in Österreich oder anderen Staaten des Europäischen Wirtschaftsraums haben. Wenn wir Informationen an Personen außerhalb des Europäischen Wirtschaftsraums weitergeben, stellen wir sicher, dass angemessene Sicherheitsvorkehrungen getroffen werden (z. B. durch den Gebrauch der EU-Standardvertragsklauseln). Wir teilen Ihre persönlichen Daten mit keinen anderen Parteien.</p>
-<p class="font-bold pt-2">Andere Websites</p>
-<p>Unsere Website kann Links zu anderen Websites enthalten. Wir sind nicht für die Datenschutzerklärungen, den Inhalt oder die Sicherheit dieser Websites verantwortlich.</p>
-<p class="font-bold pt-2">Speichern Ihrer Daten</p>
-<p>Wir behandeln Ihre persönlichen Daten mit größter Sorgfalt und ergreifen verschiedene technische und organisatorische Maßnahmen, um sie so gut wie möglich vor Verlust oder Missbrauch zu schützen.</p>
-<p class="font-bold pt-2">Aufbewahrungszeitraum Ihrer Daten</p>
-<p>Die von Ihnen zur Verfügung gestellten Daten werden so lange wie gesetzlich vorgeschrieben oder so lange wie nötig aufbewahrt. Wenn die Daten nicht länger gebraucht werden, ergreifen wir angemessene Maßnahmen zum Vernichten oder Anonymisieren Ihrer persönlichen Daten.</p>
-<p class="font-bold pt-2">Datenschutzbestimmungen für Minderjährige</p>
-<p>Die Website ist nicht für Personen unter 18 Jahren zugänglich. Wir sammeln zu keiner Zeit aktiv persönliche Daten von Personen unter 18 Jahren.</p>
-</div>
-
-<div class="space-y-2">
-<h4 class="font-headline-sm text-headline-sm text-on-surface">3. Cookies</h4>
-<p>Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren, Funktionen für soziale Medien anbieten zu können und die Zugriffe auf unserer Website zu analysieren. Außerdem geben wir Informationen zu Ihrer Verwendung unserer Website an unsere Partner für soziale Medien, Werbung und Analysen weiter. Unsere Partner führen diese Informationen möglicherweise mit weiteren Daten zusammen, die Sie ihnen bereitgestellt haben oder die sie im Rahmen Ihrer Nutzung der Dienste gesammelt haben.</p>
-<p>Eine Verarbeitung und Verwendung der Cookies durch Drittanbieter findet teils in den USA statt. Es liegt kein Angemessenheitsbeschluss der Europäischen Kommission vor, dass in den USA ein angemessenes Datenschutzniveau besteht. Daher besteht die Möglichkeit, dass personenbezogene Daten zu Kontroll- und Überwachungszwecken durch Behörden herangezogen werden.</p>
-</div>
-
-<div class="space-y-2">
-<h4 class="font-headline-sm text-headline-sm text-on-surface">4. Zugang zu und Änderung Ihrer Daten</h4>
-<p>Sie können eine Übersicht aller persönlichen Daten anfordern, die wir von Ihnen verarbeitet haben, und wie wir diese verwenden. Darüber hinaus können Sie die Daten ändern, sollten diese nicht korrekt sein, und uns bitten, Ihre Daten nicht weiter zu verarbeiten. Wenn Sie Ihr Nutzerkonto deaktivieren, können Sie all Ihre persönlichen Daten löschen — außer wir haben rechtlich zulässige Gründe, Ihre Daten weiterhin zu verarbeiten.</p>
-</div>
-
-<div class="space-y-2">
-<h4 class="font-headline-sm text-headline-sm text-on-surface">5. Geltendes Recht und Rechtsstand</h4>
-<p>Diese Datenschutzerklärung sowie die Verarbeitung Ihrer personenbezogenen Daten unterliegen dem Recht Österreichs sowie den einschlägigen EU-rechtlichen Vorschriften. Gerichtsstand für sämtliche die Datenverarbeitung betreffende Rechtsstreitigkeiten ist Salzburg, soweit keine zwingenden nationalen Vorschriften entgegenstehen.</p>
-<p>Bei Fragen zur Datenschutzerklärung, Cookie-Richtlinie oder der Verarbeitung Ihrer persönlichen Daten kontaktieren Sie uns bitte: <a href="mailto:info@kalea.com" class="text-[#E8A838] hover:underline">info@kalea.com</a></p>
-<p class="text-text-secondary">Diese Datenschutzerklärung wurde zuletzt am 07. Juli 2026 aktualisiert.</p>
-</div>
-
-</div>
-</div>
-</div>
 <script>
 function toggleMobileMenu(){var m=document.getElementById('mobile-menu');var b=document.getElementById('mobile-menu-btn');var open=m.classList.toggle('hidden')===false;b.setAttribute('aria-expanded',open?'true':'false');b.querySelector('.material-symbols-outlined').textContent=open?'close':'menu';}
 function closeMobileMenu(){var m=document.getElementById('mobile-menu');var b=document.getElementById('mobile-menu-btn');m.classList.add('hidden');b.setAttribute('aria-expanded','false');b.querySelector('.material-symbols-outlined').textContent='menu';}
@@ -625,12 +562,7 @@ function closeMobileMenu(){var m=document.getElementById('mobile-menu');var b=do
     counts.forEach(function(el){ co.observe(el); });
   }
 })();
-function openImpressum(){var o=document.getElementById('impressum-overlay');o.classList.remove('hidden');o.classList.add('flex');document.body.style.overflow='hidden';}
-function closeImpressum(e){var o=document.getElementById('impressum-overlay');o.classList.add('hidden');o.classList.remove('flex');document.body.style.overflow='';}
-function openDatenschutz(){var o=document.getElementById('datenschutz-overlay');o.classList.remove('hidden');o.classList.add('flex');document.body.style.overflow='hidden';}
-function closeDatenschutz(e){var o=document.getElementById('datenschutz-overlay');o.classList.add('hidden');o.classList.remove('flex');document.body.style.overflow='';}
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeImpressum();closeDatenschutz();}});
-function handleFormspree(formId, successId, errorId){
+function handleFormspree(formId, redirectUrl, errorId){
   var form=document.getElementById(formId);
   if(!form)return;
   form.addEventListener('submit',function(e){
@@ -642,8 +574,7 @@ function handleFormspree(formId, successId, errorId){
     fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
     .then(function(res){
       if(res.ok){
-        form.classList.add('hidden');
-        document.getElementById(successId).classList.remove('hidden');
+        window.location.href = redirectUrl;
       }else{
         if(errEl)errEl.classList.remove('hidden');
         if(btn){btn.disabled=false;btn.style.opacity='1';btn.textContent='Anfrage senden';}
@@ -655,7 +586,7 @@ function handleFormspree(formId, successId, errorId){
     });
   });
 }
-handleFormspree('gastro-form','gastro-success','gastro-error');
-handleFormspree('brauerei-form','brauerei-success','brauerei-error');
+handleFormspree('gastro-form','danke-gastronomie.html','gastro-error');
+handleFormspree('brauerei-form','danke-brauerei.html','brauerei-error');
 </script>
 </body></html>
