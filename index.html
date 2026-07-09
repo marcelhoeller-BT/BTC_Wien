@@ -68,7 +68,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <img src="BTC_Wien_Header_2026.jpg" alt="BeerTasting Gastro Challenge Wien – Stephansdom auf einer Wien-Karte mit Standort-Pin" class="header-banner w-full h-auto object-contain block md:h-[calc(100vh-140px)] md:max-h-[740px] md:object-cover md:object-center">
 </div>
 <!-- Hero + Zielgruppen-Weiche -->
-<header class="relative bg-surface-container-lowest pt-stack-lg pb-section-gap flex flex-col items-center justify-center overflow-hidden">
+<header class="relative bg-surface-container-lowest pt-stack-lg flex flex-col items-center justify-center overflow-hidden">
 <div class="pointer-events-none absolute inset-0 flex items-start justify-center"><div class="mt-[-4%] w-[680px] max-w-[90vw] h-[420px] rounded-full opacity-[0.12] blur-3xl" style="background:radial-gradient(circle, #E8A838, transparent 70%)"></div></div>
 <div data-reveal class="relative z-10 max-w-4xl mx-auto px-gutter text-center space-y-stack-md">
 <h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">Die digitale BeerTasting Challenge Wien</h1>
@@ -88,13 +88,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <span class="btn-shine inline-flex items-center justify-center gap-2 bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] group-hover:opacity-90 transition-opacity">Für Brauereien<span aria-hidden="true" class="material-symbols-outlined" style="font-size:20px">arrow_forward</span></span>
 </a>
 </div>
-<div data-reveal class="relative z-10 w-full flex justify-center mt-stack-lg">
+</header>
+<!-- Section: App-Demo-Video mit Wien-Karten-Banner -->
+<section class="relative overflow-hidden bg-surface-container-lowest pt-stack-lg pb-section-gap">
+<img src="wien-banner.jpg" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none">
+<div data-reveal class="relative z-10 w-full flex justify-center">
 <div class="pointer-events-none absolute inset-0 flex items-center justify-center"><div class="w-[280px] h-[280px] rounded-full opacity-[0.14] blur-3xl" style="background:radial-gradient(circle, #E8A838, transparent 70%)"></div></div>
 <video id="phone-demo-video" class="relative z-10 w-full max-w-[300px] h-auto block" poster="phone-mockup-poster.jpg" muted loop playsinline preload="none" aria-label="Vorschau: BeerTasting App im Einsatz während der Challenge">
 <source src="phone-mockup.mp4" type="video/mp4">
 </video>
 </div>
-</header>
+</section>
 <!-- Social Proof: BeerTasting-Kennzahlen -->
 <section class="relative bg-[#0E1330] text-white px-gutter py-stack-lg overflow-hidden">
 <div class="aurora"></div>
@@ -270,6 +274,4 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 .cookie-banner.is-visible{transform:translateY(0)}
 .cookie-banner__inner{max-width:1288px;margin:0 auto;padding:20px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
 .cookie-banner__text{margin:0;font-family:'Brandon Text',sans-serif;font-size:14px;line-height:20px;color:#f0f1f1;flex:1 1 320px}
-.cookie-banner__text a{color:#E8A838;text-decoration:underline}
-.cookie-banner__actions{display:flex;gap:12px;flex-wrap:wrap}
-.cookie-btn{font-family:'Brandon Text',sans-serif;font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px;cursor:pointer;border:1px solid transparent;transition:opacity .2s ease;whit
+.cookie-banner__text a{color:#E8A838;text-de
