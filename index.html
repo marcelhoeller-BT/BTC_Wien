@@ -89,10 +89,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 </a>
 </div>
 </header>
-<!-- Section: App-Demo-Video mit Wien-Karten-Banner -->
+<!-- Section: App-Demo-Video -->
 <section class="relative overflow-hidden bg-surface-container-lowest pt-stack-lg pb-section-gap">
-<img src="wien-banner.jpg" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none">
-<div class="pointer-events-none absolute inset-0 flex items-center justify-center"><div class="w-[420px] h-[640px] max-w-[92vw] rounded-[50%] blur-3xl" style="background:radial-gradient(closest-side, rgba(249,249,249,0.95) 55%, rgba(249,249,249,0) 100%)"></div></div>
 <div data-reveal class="relative z-10 w-full flex justify-center">
 <div class="pointer-events-none absolute inset-0 flex items-center justify-center"><div class="w-[280px] h-[280px] rounded-full opacity-[0.14] blur-3xl" style="background:radial-gradient(circle, #E8A838, transparent 70%)"></div></div>
 <video id="phone-demo-video" class="relative z-10 w-full max-w-[300px] h-auto block" poster="phone-mockup-poster.jpg" muted loop playsinline preload="none" aria-label="Vorschau: BeerTasting App im Einsatz während der Challenge">
@@ -127,8 +125,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 </div>
 </section>
 <!-- Mechanik-Teaser -->
-<section class="bg-surface-container-lowest px-gutter py-section-gap">
-<div class="max-w-container-max mx-auto space-y-stack-lg">
+<section class="relative overflow-hidden bg-surface-container-lowest px-gutter py-section-gap">
+<img src="wien-banner.jpg" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none">
+<div class="relative z-10 max-w-container-max mx-auto space-y-stack-lg">
 <div data-reveal class="text-center space-y-stack-sm">
 <span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold">Mechanik</span>
 <h2 class="font-headline-md text-headline-md text-on-surface">So funktioniert die Challenge</h2>
@@ -273,4 +272,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <style>
 .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#0E1330;color:#fff;box-shadow:0 -8px 30px -12px rgba(0,0,0,0.35);transform:translateY(110%);transition:transform .5s cubic-bezier(.22,1,.36,1)}
 .cookie-banner.is-visible{transform:translateY(0)}
-.cookie-banner__inner{max-width:1288px;margin:0 auto;padding:20p
+.cookie-banner__inner{max-width:1288px;margin:0 auto;padding:20px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.cookie-banner__text{margin:0;font-family:'Brandon Text',sans-serif;font-size:14px;line-height:20px;color:#f0f1f1;flex:1 1 320px}
+.cookie-banner__text a{color
