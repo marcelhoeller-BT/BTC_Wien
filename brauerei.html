@@ -158,7 +158,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <img src="BTC_Wien_Header_2026.jpg" alt="BeerTasting Gastro Challenge Wien – Stephansdom auf einer Wien-Karte mit Standort-Pin" class="header-banner w-full h-auto object-contain block md:h-[calc(100vh-140px)] md:max-h-[740px] md:object-cover md:object-center">
 </div>
 <!-- Hero -->
-<header class="relative bg-surface-container-lowest pt-stack-lg pb-section-gap flex flex-col items-center justify-center overflow-hidden">
+<header id="hero" class="relative bg-surface-container-lowest pt-stack-lg pb-section-gap flex flex-col items-center justify-center overflow-hidden">
 <div class="pointer-events-none absolute inset-0 flex items-start justify-center"><div class="mt-[-4%] w-[680px] max-w-[90vw] h-[420px] rounded-full opacity-[0.12] blur-3xl" style="background:radial-gradient(circle, #E8A838, transparent 70%)"></div></div>
 <div data-reveal class="relative z-10 max-w-4xl mx-auto px-gutter text-center space-y-stack-md">
 <span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold">Für Brauereien</span>
@@ -511,7 +511,7 @@ handleFormspree('brauerei-form','danke-brauerei.html','brauerei-error');
   try {
     if (sessionStorage.getItem('btcwien_scroll_to_content') === '1') {
       sessionStorage.removeItem('btcwien_scroll_to_content');
-      var target = document.getElementById('nutzen');
+      var target = document.getElementById('hero');
       if (target) {
         var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         requestAnimationFrame(function(){
