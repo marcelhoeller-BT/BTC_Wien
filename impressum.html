@@ -53,4 +53,46 @@
 </div>
 </div>
 </footer>
+<!-- Cookie-Consent-Banner -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie-Einstellungen" hidden>
+<div class="cookie-banner__inner">
+<p class="cookie-banner__text">Wir verwenden Cookies, um deine Erfahrung auf dieser Website zu verbessern und Zugriffe zu analysieren. Weitere Infos in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+<div class="cookie-banner__actions">
+<button type="button" id="cookie-reject" class="cookie-btn cookie-btn--ghost">Nur notwendige</button>
+<button type="button" id="cookie-accept" class="cookie-btn cookie-btn--primary">Alle akzeptieren</button>
+</div>
+</div>
+</div>
+<style>
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#0E1330;color:#fff;box-shadow:0 -8px 30px -12px rgba(0,0,0,0.35);transform:translateY(110%);transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.cookie-banner.is-visible{transform:translateY(0)}
+.cookie-banner__inner{max-width:1288px;margin:0 auto;padding:20px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.cookie-banner__text{margin:0;font-family:'Brandon Text',sans-serif;font-size:14px;line-height:20px;color:#f0f1f1;flex:1 1 320px}
+.cookie-banner__text a{color:#E8A838;text-decoration:underline}
+.cookie-banner__actions{display:flex;gap:12px;flex-wrap:wrap}
+.cookie-btn{font-family:'Brandon Text',sans-serif;font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px;cursor:pointer;border:1px solid transparent;transition:opacity .2s ease;white-space:nowrap}
+.cookie-btn:hover{opacity:.9}
+.cookie-btn--primary{background:#E8A838;color:#1a1c1c}
+.cookie-btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+@media (max-width:600px){.cookie-banner__inner{flex-direction:column;align-items:stretch}.cookie-banner__actions{justify-content:stretch}.cookie-btn{flex:1}}
+</style>
+<script>
+(function(){
+  var KEY='btcwien_cookie_consent';
+  try{
+    if(!localStorage.getItem(KEY)){
+      var b=document.getElementById('cookie-banner');
+      if(b){ b.hidden=false; setTimeout(function(){ b.classList.add('is-visible'); }, 400); }
+    }
+  }catch(e){}
+  function setConsent(val){
+    try{ localStorage.setItem(KEY, val); }catch(e){}
+    var b=document.getElementById('cookie-banner');
+    if(b){ b.classList.remove('is-visible'); setTimeout(function(){ b.hidden=true; }, 500); }
+  }
+  var a=document.getElementById('cookie-accept'), r=document.getElementById('cookie-reject');
+  if(a) a.addEventListener('click', function(){ setConsent('accepted'); });
+  if(r) r.addEventListener('click', function(){ setConsent('necessary'); });
+})();
+</script>
 </body></html>

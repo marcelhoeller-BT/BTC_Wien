@@ -76,13 +76,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <div data-reveal class="relative z-10 w-full max-w-4xl mx-auto px-gutter mt-stack-lg grid grid-cols-1 sm:grid-cols-2 gap-gutter">
 <a href="gastronomie.html" class="card-hover group flex flex-col bg-surface-container-lowest p-8 rounded-[8px] border border-border-muted shadow-sm text-left">
 <span aria-hidden="true" class="material-symbols-outlined text-4xl text-[#E8A838] mb-4">storefront</span>
-<h2 class="font-headline-sm text-headline-sm mb-2">Ich bin Gastronomie</h2>
-<p class="font-body-md text-body-md text-text-secondary flex-grow mb-6">Mehr Laufkundschaft, ganz ohne Aufwand. 100 €/Monat, monatlich kündbar.</p>
+<h2 class="font-headline-md text-headline-md mb-2">Gastronomie</h2>
+<p class="font-body-md text-body-md text-text-secondary flex-grow mb-6">Mehr Laufkundschaft, ganz ohne Aufwand.<br>100 €/Monat, monatlich kündbar.</p>
 <span class="btn-shine inline-flex items-center justify-center gap-2 bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] group-hover:opacity-90 transition-opacity">Für Gastronomien<span aria-hidden="true" class="material-symbols-outlined" style="font-size:20px">arrow_forward</span></span>
 </a>
 <a href="brauerei.html" class="card-hover group flex flex-col bg-surface-container-lowest p-8 rounded-[8px] border border-border-muted shadow-sm text-left">
 <span aria-hidden="true" class="material-symbols-outlined text-4xl text-[#E8A838] mb-4">sports_bar</span>
-<h2 class="font-headline-sm text-headline-sm mb-2">Ich bin Brauerei</h2>
+<h2 class="font-headline-md text-headline-md mb-2">Brauerei</h2>
 <p class="font-body-md text-body-md text-text-secondary flex-grow mb-6">Portfolio-Sichtbarkeit und Analytics-Back-End. Bundles ab 300 €/Monat.</p>
 <span class="btn-shine inline-flex items-center justify-center gap-2 bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] group-hover:opacity-90 transition-opacity">Für Brauereien<span aria-hidden="true" class="material-symbols-outlined" style="font-size:20px">arrow_forward</span></span>
 </a>
@@ -93,7 +93,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <div class="aurora"></div>
 <div class="relative z-10 max-w-container-max mx-auto">
 <p data-reveal class="text-center font-label-caps text-label-caps uppercase tracking-wider text-[#E8A838] mb-2">Die Plattform hinter der Challenge</p>
-<h2 data-reveal class="text-center font-headline-sm text-headline-sm text-white mb-stack-lg max-w-2xl mx-auto">Diese Reichweite steht hinter jeder Anfrage, die über die Challenge bei dir landet.</h2>
+<h2 data-reveal class="text-center font-headline-sm text-headline-sm text-white mb-stack-lg max-w-2xl mx-auto">Nach den erfolgreichen BeerTasting Challenges Salzburg, Wien und Linz startet nun ein neues Format</h2>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
 <div data-reveal class="text-center">
 <div class="font-headline-md text-[28px] leading-[32px] sm:text-headline-md text-[#E8A838]"><span data-count="240000" data-suffix="+">0</span></div>
@@ -226,6 +226,48 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
     }, { threshold: 0.5 });
     counts.forEach(function(el){ co.observe(el); });
   }
+})();
+</script>
+<!-- Cookie-Consent-Banner -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie-Einstellungen" hidden>
+<div class="cookie-banner__inner">
+<p class="cookie-banner__text">Wir verwenden Cookies, um deine Erfahrung auf dieser Website zu verbessern und Zugriffe zu analysieren. Weitere Infos in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+<div class="cookie-banner__actions">
+<button type="button" id="cookie-reject" class="cookie-btn cookie-btn--ghost">Nur notwendige</button>
+<button type="button" id="cookie-accept" class="cookie-btn cookie-btn--primary">Alle akzeptieren</button>
+</div>
+</div>
+</div>
+<style>
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#0E1330;color:#fff;box-shadow:0 -8px 30px -12px rgba(0,0,0,0.35);transform:translateY(110%);transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.cookie-banner.is-visible{transform:translateY(0)}
+.cookie-banner__inner{max-width:1288px;margin:0 auto;padding:20px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.cookie-banner__text{margin:0;font-family:'Brandon Text',sans-serif;font-size:14px;line-height:20px;color:#f0f1f1;flex:1 1 320px}
+.cookie-banner__text a{color:#E8A838;text-decoration:underline}
+.cookie-banner__actions{display:flex;gap:12px;flex-wrap:wrap}
+.cookie-btn{font-family:'Brandon Text',sans-serif;font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px;cursor:pointer;border:1px solid transparent;transition:opacity .2s ease;white-space:nowrap}
+.cookie-btn:hover{opacity:.9}
+.cookie-btn--primary{background:#E8A838;color:#1a1c1c}
+.cookie-btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+@media (max-width:600px){.cookie-banner__inner{flex-direction:column;align-items:stretch}.cookie-banner__actions{justify-content:stretch}.cookie-btn{flex:1}}
+</style>
+<script>
+(function(){
+  var KEY='btcwien_cookie_consent';
+  try{
+    if(!localStorage.getItem(KEY)){
+      var b=document.getElementById('cookie-banner');
+      if(b){ b.hidden=false; setTimeout(function(){ b.classList.add('is-visible'); }, 400); }
+    }
+  }catch(e){}
+  function setConsent(val){
+    try{ localStorage.setItem(KEY, val); }catch(e){}
+    var b=document.getElementById('cookie-banner');
+    if(b){ b.classList.remove('is-visible'); setTimeout(function(){ b.hidden=true; }, 500); }
+  }
+  var a=document.getElementById('cookie-accept'), r=document.getElementById('cookie-reject');
+  if(a) a.addEventListener('click', function(){ setConsent('accepted'); });
+  if(r) r.addEventListener('click', function(){ setConsent('necessary'); });
 })();
 </script>
 </body></html>
