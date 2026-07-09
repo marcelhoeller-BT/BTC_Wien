@@ -247,38 +247,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 </div>
 <div class="hero-phone group relative z-10">
 <img src="Hero.png" alt="BeerTasting Challenge Wien – Live-Ansicht in der App mit Karte, Countdown und Stationen" loading="lazy" class="w-full max-w-[300px] h-auto mx-auto block">
-<div class="annotation absolute top-[14%] right-[-8px] lg:right-[-40px] flex items-center gap-2">
-<span class="dot-ping relative flex h-2 w-2 shrink-0">
-<span class="ping-ring absolute inline-flex h-full w-full rounded-full bg-[#E8A838] opacity-70"></span>
-<span class="relative inline-flex h-2 w-2 rounded-full bg-[#E8A838]"></span>
-</span>
-<span class="leader-line block w-5 h-px bg-[#E8A838] shrink-0 origin-left"></span>
-<span class="inline-flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface bg-[#E8A838] pl-2 pr-3 py-1.5 rounded-full shadow-md whitespace-nowrap"><span aria-hidden="true" class="material-symbols-outlined" style="font-size:16px">schedule</span>Countdown bis Saisonende</span>
-</div>
-<div class="annotation absolute top-[63%] left-[-8px] lg:left-[-44px] flex items-center gap-2 flex-row-reverse">
-<span class="dot-ping relative flex h-2 w-2 shrink-0">
-<span class="ping-ring absolute inline-flex h-full w-full rounded-full bg-[#E8A838] opacity-70"></span>
-<span class="relative inline-flex h-2 w-2 rounded-full bg-[#E8A838]"></span>
-</span>
-<span class="leader-line block w-5 h-px bg-[#E8A838] shrink-0 origin-right"></span>
-<span class="inline-flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface bg-[#E8A838] pl-2 pr-3 py-1.5 rounded-full shadow-md whitespace-nowrap"><span aria-hidden="true" class="material-symbols-outlined" style="font-size:16px">wifi_tethering</span>Live-Status</span>
-</div>
-<div class="annotation absolute top-[80%] right-[-8px] lg:right-[-52px] flex items-center gap-2">
-<span class="dot-ping relative flex h-2 w-2 shrink-0">
-<span class="ping-ring absolute inline-flex h-full w-full rounded-full bg-[#E8A838] opacity-70"></span>
-<span class="relative inline-flex h-2 w-2 rounded-full bg-[#E8A838]"></span>
-</span>
-<span class="leader-line block w-5 h-px bg-[#E8A838] shrink-0 origin-left"></span>
-<span class="inline-flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface bg-[#E8A838] pl-2 pr-3 py-1.5 rounded-full shadow-md whitespace-nowrap"><span aria-hidden="true" class="material-symbols-outlined" style="font-size:16px">location_on</span>Alle Stationen</span>
-</div>
-<div class="annotation absolute top-[90%] left-[-8px] lg:left-[-44px] flex items-center gap-2 flex-row-reverse">
-<span class="dot-ping relative flex h-2 w-2 shrink-0">
-<span class="ping-ring absolute inline-flex h-full w-full rounded-full bg-[#E8A838] opacity-70"></span>
-<span class="relative inline-flex h-2 w-2 rounded-full bg-[#E8A838]"></span>
-</span>
-<span class="leader-line block w-5 h-px bg-[#E8A838] shrink-0 origin-right"></span>
-<span class="inline-flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface bg-[#E8A838] pl-2 pr-3 py-1.5 rounded-full shadow-md whitespace-nowrap"><span aria-hidden="true" class="material-symbols-outlined" style="font-size:16px">group</span>Teilnehmer</span>
-</div>
 </div>
 </div>
 <!-- Text rechts -->
@@ -600,4 +568,12 @@ handleFormspree('brauerei-form','danke-brauerei.html','brauerei-error');
   function setConsent(val){
     try{ localStorage.setItem(KEY, val); }catch(e){}
     var b=document.getElementById('cookie-banner');
-    if(b
+    if(b){ b.classList.remove('is-visible'); setTimeout(function(){ b.hidden=true; }, 500); }
+  }
+  var a=document.getElementById('cookie-accept'), r=document.getElementById('cookie-reject');
+  if(a) a.addEventListener('click', function(){ setConsent('accepted'); });
+  if(r) r.addEventListener('click', function(){ setConsent('necessary'); });
+})();
+</script>
+</body></html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
