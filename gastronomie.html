@@ -185,12 +185,15 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <!-- Section: Umsatz-Rechner -->
 <section class="bg-[#F3F3F4] px-gutter py-section-gap" id="rechner">
 <div class="max-w-container-max mx-auto">
-<div data-reveal class="text-center max-w-2xl mx-auto space-y-stack-sm mb-stack-lg">
-<span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold">Proof</span>
-<h2 class="font-headline-md text-headline-md text-on-surface">Was die Challenge für dein Lokal wert ist.</h2>
-<p class="font-body-lg text-body-lg text-text-secondary">Jeder Teilnehmer, den die Challenge zu dir schickt, bestellt im Schnitt 1,5 Biere à 4,50 €. Reiner Mehrumsatz, nur durch die Listung.</p>
+<div data-reveal class="max-w-3xl mx-auto bg-surface-container-lowest rounded-[8px] border border-border-muted shadow-sm overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-2">
+<!-- Steuerung links -->
+<div class="p-8">
+<div class="flex items-center gap-2 mb-2">
+<span aria-hidden="true" class="material-symbols-outlined text-[#E8A838]" style="font-size:22px">calculate</span>
+<span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold">Umsatz-Rechner</span>
 </div>
-<div data-reveal class="max-w-xl mx-auto bg-surface-container-lowest p-8 rounded-[8px] border border-border-muted shadow-sm">
+<p class="font-body-sm text-body-sm text-text-secondary mb-6">Bewege den Regler: So viel zusätzlicher Umsatz entsteht in deinem Lokal, rein durch die Sichtbarkeit auf der Challenge-Karte.</p>
 <div class="flex items-center justify-between mb-2">
 <label for="calc-teilnehmer" class="font-label-caps text-text-secondary">Teilnehmer durch die Challenge</label>
 <span id="calc-teilnehmer-value" class="font-headline-sm text-headline-sm text-on-surface">2.000</span>
@@ -200,13 +203,20 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <span class="font-body-sm text-body-sm text-text-secondary">0</span>
 <span class="font-body-sm text-body-sm text-text-secondary">5.000+</span>
 </div>
-<div class="flex flex-wrap gap-3 mb-6">
+<div class="flex flex-wrap gap-2">
 <span class="inline-flex items-center font-body-sm text-body-sm text-on-surface bg-surface-container-low border border-border-muted px-3 py-1.5 rounded-full">Ø 4,50 € pro Bier</span>
 <span class="inline-flex items-center font-body-sm text-body-sm text-on-surface bg-surface-container-low border border-border-muted px-3 py-1.5 rounded-full">Ø 1,5 Biere pro Besuch</span>
 </div>
-<div class="border-t border-border-muted pt-6 text-center">
-<p class="font-body-sm text-body-sm text-text-secondary mb-1">Geschätzter Mehrumsatz für dein Lokal</p>
-<div class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-[#E8A838]"><span id="calc-result">13.500</span> €</div>
+</div>
+<!-- Ergebnis rechts -->
+<div class="relative bg-[#0E1330] text-white p-8 flex flex-col items-center justify-center text-center overflow-hidden">
+<div class="pointer-events-none absolute -top-10 -right-10 w-40 h-40 rounded-full opacity-20 blur-3xl" style="background:radial-gradient(circle, #E8A838, transparent 70%)"></div>
+<div class="relative z-10">
+<p class="font-body-sm text-body-sm text-white/70 mb-1">Geschätzter Mehrumsatz für dein Lokal</p>
+<div class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-[#E8A838] mb-2"><span id="calc-result">13.500</span> €</div>
+<p id="calc-formula" class="font-body-sm text-body-sm text-white/70">2.000 Teilnehmer × 1,5 Biere × 4,50 €</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -217,14 +227,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
   if(!slider) return;
   var valueEl = document.getElementById('calc-teilnehmer-value');
   var resultEl = document.getElementById('calc-result');
+  var formulaEl = document.getElementById('calc-formula');
   var BIERPREIS = 4.5, BIERE_PRO_BESUCH = 1.5;
   function update(){
     var teilnehmer = parseInt(slider.value, 10);
     var pct = (teilnehmer - slider.min) / (slider.max - slider.min) * 100;
     slider.style.setProperty('--fill', pct + '%');
-    valueEl.textContent = teilnehmer.toLocaleString('de-DE');
+    var teilnehmerStr = teilnehmer.toLocaleString('de-DE');
+    valueEl.textContent = teilnehmerStr;
     var umsatz = Math.round(teilnehmer * BIERE_PRO_BESUCH * BIERPREIS);
     resultEl.textContent = umsatz.toLocaleString('de-DE');
+    if(formulaEl) formulaEl.textContent = teilnehmerStr + ' Teilnehmer × 1,5 Biere × 4,50 €';
   }
   slider.addEventListener('input', update);
   update();
@@ -570,10 +583,4 @@ handleFormspree('gastro-form','danke-gastronomie.html','gastro-error');
     var b=document.getElementById('cookie-banner');
     if(b){ b.classList.remove('is-visible'); setTimeout(function(){ b.hidden=true; }, 500); }
   }
-  var a=document.getElementById('cookie-accept'), r=document.getElementById('cookie-reject');
-  if(a) a.addEventListener('click', function(){ setConsent('accepted'); });
-  if(r) r.addEventListener('click', function(){ setConsent('necessary'); });
-})();
-</script>
-</body></html>
-                                                                                                                                                                                                                                                                                                                                                                                                                                   
+  var a=doc
