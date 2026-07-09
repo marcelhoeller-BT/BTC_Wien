@@ -182,6 +182,54 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 </div>
 </div>
 </section>
+<!-- Section: Umsatz-Rechner -->
+<section class="bg-[#F3F3F4] px-gutter py-section-gap" id="rechner">
+<div class="max-w-container-max mx-auto">
+<div data-reveal class="text-center max-w-2xl mx-auto space-y-stack-sm mb-stack-lg">
+<span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold">Proof</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Was die Challenge für dein Lokal wert ist.</h2>
+<p class="font-body-lg text-body-lg text-text-secondary">Jeder Teilnehmer, den die Challenge zu dir schickt, bestellt im Schnitt 1,5 Biere à 4,50 €. Reiner Mehrumsatz, nur durch die Listung.</p>
+</div>
+<div data-reveal class="max-w-xl mx-auto bg-surface-container-lowest p-8 rounded-[8px] border border-border-muted shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<label for="calc-teilnehmer" class="font-label-caps text-text-secondary">Teilnehmer durch die Challenge</label>
+<span id="calc-teilnehmer-value" class="font-headline-sm text-headline-sm text-on-surface">2.000</span>
+</div>
+<input type="range" id="calc-teilnehmer" class="calc-slider" min="0" max="5000" step="50" value="2000" aria-label="Anzahl Teilnehmer durch die Challenge">
+<div class="flex justify-between mt-1 mb-6">
+<span class="font-body-sm text-body-sm text-text-secondary">0</span>
+<span class="font-body-sm text-body-sm text-text-secondary">5.000+</span>
+</div>
+<div class="flex flex-wrap gap-3 mb-6">
+<span class="inline-flex items-center font-body-sm text-body-sm text-on-surface bg-surface-container-low border border-border-muted px-3 py-1.5 rounded-full">Ø 4,50 € pro Bier</span>
+<span class="inline-flex items-center font-body-sm text-body-sm text-on-surface bg-surface-container-low border border-border-muted px-3 py-1.5 rounded-full">Ø 1,5 Biere pro Besuch</span>
+</div>
+<div class="border-t border-border-muted pt-6 text-center">
+<p class="font-body-sm text-body-sm text-text-secondary mb-1">Geschätzter Mehrumsatz für dein Lokal</p>
+<div class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-[#E8A838]"><span id="calc-result">13.500</span> €</div>
+</div>
+</div>
+</div>
+</section>
+<script>
+(function(){
+  var slider = document.getElementById('calc-teilnehmer');
+  if(!slider) return;
+  var valueEl = document.getElementById('calc-teilnehmer-value');
+  var resultEl = document.getElementById('calc-result');
+  var BIERPREIS = 4.5, BIERE_PRO_BESUCH = 1.5;
+  function update(){
+    var teilnehmer = parseInt(slider.value, 10);
+    var pct = (teilnehmer - slider.min) / (slider.max - slider.min) * 100;
+    slider.style.setProperty('--fill', pct + '%');
+    valueEl.textContent = teilnehmer.toLocaleString('de-DE');
+    var umsatz = Math.round(teilnehmer * BIERE_PRO_BESUCH * BIERPREIS);
+    resultEl.textContent = umsatz.toLocaleString('de-DE');
+  }
+  slider.addEventListener('input', update);
+  update();
+})();
+</script>
 <!-- Section: Funktionsweise -->
 <section class="bg-surface-container-lowest px-gutter py-section-gap relative z-10" id="funktionsweise">
 <div class="max-w-container-max mx-auto space-y-stack-lg">
@@ -290,80 +338,6 @@ Mehr Infos
 </div>
 </div>
 </section>
-<!-- Section: Beweis / Kennzahlen -->
-<section class="relative bg-[#0E1330] text-white px-gutter py-stack-lg overflow-hidden" id="beweis">
-<div class="aurora"></div>
-<div class="relative z-10 max-w-container-max mx-auto">
-<p data-reveal class="text-center font-label-caps text-label-caps uppercase tracking-wider text-[#E8A838] mb-2">Die Plattform hinter der Challenge</p>
-<h2 data-reveal class="text-center font-headline-sm text-headline-sm text-white mb-stack-lg max-w-2xl mx-auto">Diese Reichweite bringt Laufkundschaft in dein Lokal.</h2>
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-<div data-reveal class="text-center">
-<div class="font-headline-md text-[28px] leading-[32px] sm:text-headline-md text-[#E8A838]"><span data-count="240000" data-suffix="+">0</span></div>
-<p class="font-body-sm text-body-sm text-white/70 mt-1">registrierte App-User</p>
-</div>
-<div data-reveal class="text-center">
-<div class="font-headline-md text-[28px] leading-[32px] sm:text-headline-md text-[#E8A838]"><span data-count="130000">0</span></div>
-<p class="font-body-sm text-body-sm text-white/70 mt-1">Newsletter-Abonnenten</p>
-</div>
-<div data-reveal class="text-center">
-<div class="font-headline-md text-[28px] leading-[32px] sm:text-headline-md text-[#E8A838]"><span data-count="5" data-suffix=" Mio.">0</span></div>
-<p class="font-body-sm text-body-sm text-white/70 mt-1">Bierbewertungen</p>
-</div>
-<div data-reveal class="text-center">
-<div class="font-headline-md text-[28px] leading-[32px] sm:text-headline-md text-[#E8A838]"><span data-count="363000" data-suffix="+">0</span></div>
-<p class="font-body-sm text-body-sm text-white/70 mt-1">Biere in der Datenbank</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Section: Umsatz-Rechner -->
-<section class="bg-surface-container-lowest px-gutter py-section-gap" id="rechner">
-<div class="max-w-container-max mx-auto">
-<div data-reveal class="text-center max-w-2xl mx-auto space-y-stack-sm mb-stack-lg">
-<span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold">Proof</span>
-<h2 class="font-headline-md text-headline-md text-on-surface">Was die Challenge für dein Lokal wert ist.</h2>
-<p class="font-body-lg text-body-lg text-text-secondary">Jeder Teilnehmer, den die Challenge zu dir schickt, bestellt im Schnitt 1,5 Biere à 4,50 €. Reiner Mehrumsatz, nur durch die Listung.</p>
-</div>
-<div data-reveal class="max-w-xl mx-auto bg-surface-container-low p-8 rounded-[8px] border border-border-muted shadow-sm">
-<div class="flex items-center justify-between mb-2">
-<label for="calc-teilnehmer" class="font-label-caps text-text-secondary">Teilnehmer durch die Challenge</label>
-<span id="calc-teilnehmer-value" class="font-headline-sm text-headline-sm text-on-surface">2.000</span>
-</div>
-<input type="range" id="calc-teilnehmer" class="calc-slider" min="0" max="5000" step="50" value="2000" aria-label="Anzahl Teilnehmer durch die Challenge">
-<div class="flex justify-between mt-1 mb-6">
-<span class="font-body-sm text-body-sm text-text-secondary">0</span>
-<span class="font-body-sm text-body-sm text-text-secondary">5.000+</span>
-</div>
-<div class="flex flex-wrap gap-3 mb-6">
-<span class="inline-flex items-center font-body-sm text-body-sm text-on-surface bg-surface-container-lowest border border-border-muted px-3 py-1.5 rounded-full">Ø 4,50 € pro Bier</span>
-<span class="inline-flex items-center font-body-sm text-body-sm text-on-surface bg-surface-container-lowest border border-border-muted px-3 py-1.5 rounded-full">Ø 1,5 Biere pro Besuch</span>
-</div>
-<div class="border-t border-border-muted pt-6 text-center">
-<p class="font-body-sm text-body-sm text-text-secondary mb-1">Geschätzter Mehrumsatz für dein Lokal</p>
-<div class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-[#E8A838]"><span id="calc-result">13.500</span> €</div>
-</div>
-</div>
-</div>
-</section>
-<script>
-(function(){
-  var slider = document.getElementById('calc-teilnehmer');
-  if(!slider) return;
-  var valueEl = document.getElementById('calc-teilnehmer-value');
-  var resultEl = document.getElementById('calc-result');
-  var BIERPREIS = 4.5, BIERE_PRO_BESUCH = 1.5;
-  function update(){
-    var teilnehmer = parseInt(slider.value, 10);
-    var pct = (teilnehmer - slider.min) / (slider.max - slider.min) * 100;
-    slider.style.setProperty('--fill', pct + '%');
-    valueEl.textContent = teilnehmer.toLocaleString('de-DE');
-    var umsatz = Math.round(teilnehmer * BIERE_PRO_BESUCH * BIERPREIS);
-    resultEl.textContent = umsatz.toLocaleString('de-DE');
-  }
-  slider.addEventListener('input', update);
-  update();
-})();
-</script>
 <!-- Section: Preis -->
 <section class="bg-[#F3F3F4] px-gutter py-section-gap" id="preis">
 <div class="max-w-container-max mx-auto flex flex-col items-center gap-stack-lg">
@@ -576,4 +550,30 @@ handleFormspree('gastro-form','danke-gastronomie.html','gastro-error');
 .cookie-banner__text{margin:0;font-family:'Brandon Text',sans-serif;font-size:14px;line-height:20px;color:#f0f1f1;flex:1 1 320px}
 .cookie-banner__text a{color:#E8A838;text-decoration:underline}
 .cookie-banner__actions{display:flex;gap:12px;flex-wrap:wrap}
-.cookie-btn{font-family:'B
+.cookie-btn{font-family:'Brandon Text',sans-serif;font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px;cursor:pointer;border:1px solid transparent;transition:opacity .2s ease;white-space:nowrap}
+.cookie-btn:hover{opacity:.9}
+.cookie-btn--primary{background:#E8A838;color:#1a1c1c}
+.cookie-btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+@media (max-width:600px){.cookie-banner__inner{flex-direction:column;align-items:stretch}.cookie-banner__actions{justify-content:stretch}.cookie-btn{flex:1}}
+</style>
+<script>
+(function(){
+  var KEY='btcwien_cookie_consent';
+  try{
+    if(!localStorage.getItem(KEY)){
+      var b=document.getElementById('cookie-banner');
+      if(b){ b.hidden=false; setTimeout(function(){ b.classList.add('is-visible'); }, 400); }
+    }
+  }catch(e){}
+  function setConsent(val){
+    try{ localStorage.setItem(KEY, val); }catch(e){}
+    var b=document.getElementById('cookie-banner');
+    if(b){ b.classList.remove('is-visible'); setTimeout(function(){ b.hidden=true; }, 500); }
+  }
+  var a=document.getElementById('cookie-accept'), r=document.getElementById('cookie-reject');
+  if(a) a.addEventListener('click', function(){ setConsent('accepted'); });
+  if(r) r.addEventListener('click', function(){ setConsent('necessary'); });
+})();
+</script>
+</body></html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                   

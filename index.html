@@ -89,15 +89,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 </a>
 </div>
 </header>
-<!-- Section: App-Demo-Video -->
-<section class="relative overflow-hidden bg-surface-container-lowest pt-stack-lg pb-section-gap">
-<div data-reveal class="relative z-10 w-full flex justify-center">
-<div class="pointer-events-none absolute inset-0 flex items-center justify-center"><div class="w-[280px] h-[280px] rounded-full opacity-[0.14] blur-3xl" style="background:radial-gradient(circle, #E8A838, transparent 70%)"></div></div>
-<video id="phone-demo-video" class="relative z-10 w-full max-w-[300px] h-auto block" poster="phone-mockup-poster.jpg" muted loop playsinline preload="none" aria-label="Vorschau: BeerTasting App im Einsatz während der Challenge">
-<source src="phone-mockup.mp4" type="video/mp4">
-</video>
-</div>
-</section>
 <!-- Social Proof: BeerTasting-Kennzahlen -->
 <section class="relative bg-[#0E1330] text-white px-gutter py-stack-lg overflow-hidden">
 <div class="aurora"></div>
@@ -132,7 +123,16 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <h2 class="font-headline-md text-headline-md text-on-surface">So funktioniert die Challenge</h2>
 <p class="font-body-lg text-body-lg text-text-secondary">Start: 1. September 2026 · Läuft dauerhaft, kein Enddatum · Mindestens 40 teilnehmende Wiener Gastronomien.</p>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter max-w-5xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+<!-- Video links -->
+<div data-reveal class="relative flex justify-center">
+<div class="pointer-events-none absolute inset-0 flex items-center justify-center"><div class="w-[280px] h-[280px] rounded-full opacity-[0.14] blur-3xl" style="background:radial-gradient(circle, #E8A838, transparent 70%)"></div></div>
+<video id="phone-demo-video" class="relative z-10 w-full max-w-[300px] h-auto block" poster="phone-mockup-poster.jpg" muted loop playsinline preload="none" aria-label="Vorschau: BeerTasting App im Einsatz während der Challenge">
+<source src="phone-mockup.mp4" type="video/mp4">
+</video>
+</div>
+<!-- Kacheln rechts -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
 <div data-reveal class="card-hover bg-surface-container-low p-6 rounded-[8px] border border-border-muted text-center">
 <span aria-hidden="true" class="material-symbols-outlined text-4xl text-[#E8A838] mb-4">storefront</span>
 <h3 class="font-headline-sm text-headline-sm mb-2">1. Lokal besuchen</h3>
@@ -152,6 +152,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <span aria-hidden="true" class="material-symbols-outlined text-4xl text-[#E8A838] mb-4">workspace_premium</span>
 <h3 class="font-headline-sm text-headline-sm mb-2">4. Stationen sammeln</h3>
 <p class="font-body-md text-body-md text-text-secondary">Je mehr Lokale, desto höher die Belohnung.</p>
+</div>
 </div>
 </div>
 </div>
@@ -275,4 +276,4 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 .cookie-banner__text{margin:0;font-family:'Brandon Text',sans-serif;font-size:14px;line-height:20px;color:#f0f1f1;flex:1 1 320px}
 .cookie-banner__text a{color:#E8A838;text-decoration:underline}
 .cookie-banner__actions{display:flex;gap:12px;flex-wrap:wrap}
-.cookie-btn{font-family:'Brandon Text',sans-serif;font-size:14px;font-weight:7
+.cookie-btn{font-family:'Brandon Text',sans-serif;font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px;cursor:pointer;border:1p
