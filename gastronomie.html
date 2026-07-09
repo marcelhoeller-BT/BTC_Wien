@@ -545,6 +545,22 @@ function handleFormspree(formId, redirectUrl, errorId){
   });
 }
 handleFormspree('gastro-form','danke-gastronomie.html','gastro-error');
+/* --- Sanft zum ersten Content-Block scrollen, wenn von der Startseite verlinkt --- */
+(function(){
+  try {
+    if (sessionStorage.getItem('btcwien_scroll_to_content') === '1') {
+      sessionStorage.removeItem('btcwien_scroll_to_content');
+      var target = document.getElementById('nutzen');
+      if (target) {
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        requestAnimationFrame(function(){
+          var top = target.getBoundingClientRect().top + window.pageYOffset - 88;
+          window.scrollTo({ top: top, behavior: reduce ? 'auto' : 'smooth' });
+        });
+      }
+    }
+  } catch(e) {}
+})();
 </script>
 <!-- Cookie-Consent-Banner -->
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie-Einstellungen" hidden>
@@ -583,4 +599,9 @@ handleFormspree('gastro-form','danke-gastronomie.html','gastro-error');
     var b=document.getElementById('cookie-banner');
     if(b){ b.classList.remove('is-visible'); setTimeout(function(){ b.hidden=true; }, 500); }
   }
-  var a=doc
+  var a=document.getElementById('cookie-accept'), r=document.getElementById('cookie-reject');
+  if(a) a.addEventListener('click', function(){ setConsent('accepted'); });
+  if(r) r.addEventListener('click', function(){ setConsent('necessary'); });
+})();
+</script>
+</body></html>
