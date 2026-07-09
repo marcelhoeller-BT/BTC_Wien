@@ -88,6 +88,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <span class="btn-shine inline-flex items-center justify-center gap-2 bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] group-hover:opacity-90 transition-opacity">Für Brauereien<span aria-hidden="true" class="material-symbols-outlined" style="font-size:20px">arrow_forward</span></span>
 </a>
 </div>
+<div data-reveal class="relative z-10 w-full flex justify-center mt-stack-lg">
+<div class="pointer-events-none absolute inset-0 flex items-center justify-center"><div class="w-[280px] h-[280px] rounded-full opacity-[0.14] blur-3xl" style="background:radial-gradient(circle, #E8A838, transparent 70%)"></div></div>
+<video id="phone-demo-video" class="relative z-10 w-full max-w-[300px] h-auto block" poster="phone-mockup-poster.jpg" muted loop playsinline preload="none" aria-label="Vorschau: BeerTasting App im Einsatz während der Challenge">
+<source src="phone-mockup.mp4" type="video/mp4">
+</video>
+</div>
 </header>
 <!-- Social Proof: BeerTasting-Kennzahlen -->
 <section class="relative bg-[#0E1330] text-white px-gutter py-stack-lg overflow-hidden">
@@ -229,6 +235,26 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
   }
 })();
 </script>
+<script>
+/* --- Phone-Demo-Video: erst laden/abspielen, sobald sichtbar --- */
+(function(){
+  var v = document.getElementById('phone-demo-video');
+  if(!v) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce) return;
+  if(!('IntersectionObserver' in window)){ v.play().catch(function(){}); return; }
+  var vo = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        v.play().catch(function(){});
+      } else {
+        v.pause();
+      }
+    });
+  }, { threshold: 0.4 });
+  vo.observe(v);
+})();
+</script>
 <!-- Cookie-Consent-Banner -->
 <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie-Einstellungen" hidden>
 <div class="cookie-banner__inner">
@@ -246,30 +272,4 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 .cookie-banner__text{margin:0;font-family:'Brandon Text',sans-serif;font-size:14px;line-height:20px;color:#f0f1f1;flex:1 1 320px}
 .cookie-banner__text a{color:#E8A838;text-decoration:underline}
 .cookie-banner__actions{display:flex;gap:12px;flex-wrap:wrap}
-.cookie-btn{font-family:'Brandon Text',sans-serif;font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px;cursor:pointer;border:1px solid transparent;transition:opacity .2s ease;white-space:nowrap}
-.cookie-btn:hover{opacity:.9}
-.cookie-btn--primary{background:#E8A838;color:#1a1c1c}
-.cookie-btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
-@media (max-width:600px){.cookie-banner__inner{flex-direction:column;align-items:stretch}.cookie-banner__actions{justify-content:stretch}.cookie-btn{flex:1}}
-</style>
-<script>
-(function(){
-  var KEY='btcwien_cookie_consent';
-  try{
-    if(!localStorage.getItem(KEY)){
-      var b=document.getElementById('cookie-banner');
-      if(b){ b.hidden=false; setTimeout(function(){ b.classList.add('is-visible'); }, 400); }
-    }
-  }catch(e){}
-  function setConsent(val){
-    try{ localStorage.setItem(KEY, val); }catch(e){}
-    var b=document.getElementById('cookie-banner');
-    if(b){ b.classList.remove('is-visible'); setTimeout(function(){ b.hidden=true; }, 500); }
-  }
-  var a=document.getElementById('cookie-accept'), r=document.getElementById('cookie-reject');
-  if(a) a.addEventListener('click', function(){ setConsent('accepted'); });
-  if(r) r.addEventListener('click', function(){ setConsent('necessary'); });
-})();
-</script>
-</body></html>
-                                                                                                                 
+.cookie-btn{font-family:'Brandon Text',sans-serif;font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px;cursor:pointer;border:1px solid transparent;transition:opacity .2s ease;whit
