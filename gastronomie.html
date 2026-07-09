@@ -168,7 +168,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 </div>
 </header>
 <!-- Section: Nutzen -->
-<section class="bg-[#F3F3F4] px-gutter py-section-gap" id="nutzen">
+<section class="bg-[#F3F3F4] px-gutter pt-section-gap pb-stack-lg" id="nutzen">
 <div class="max-w-container-max mx-auto flex flex-col items-center gap-stack-lg">
 <div data-reveal class="text-center max-w-3xl space-y-stack-md">
 <span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold">Dein Nutzen</span>
@@ -183,7 +183,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 </div>
 </section>
 <!-- Section: Umsatz-Rechner -->
-<section class="bg-[#F3F3F4] px-gutter py-section-gap" id="rechner">
+<section class="bg-[#F3F3F4] px-gutter pt-stack-lg pb-section-gap" id="rechner">
 <div class="max-w-container-max mx-auto">
 <div data-reveal class="max-w-3xl mx-auto bg-surface-container-lowest rounded-[8px] border border-border-muted shadow-sm overflow-hidden">
 <div class="grid grid-cols-1 lg:grid-cols-2">
@@ -602,6 +602,7 @@ handleFormspree('gastro-form','danke-gastronomie.html','gastro-error');
   var a=document.getElementById('cookie-accept'), r=document.getElementById('cookie-reject');
   if(a) a.addEventListener('click', function(){ setConsent('accepted'); });
   if(r) r.addEventListener('click', function(){ setConsent('necessary'); });
-})();
 </script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </body></html>
