@@ -255,6 +255,46 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 </div>
 </div>
 </section>
+<!-- Section: Aftermovie Salzburg -->
+<section class="relative bg-[#0E1330] text-white px-gutter py-section-gap overflow-hidden" id="impressionen">
+<div class="aurora"></div>
+<div class="relative z-10 max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+<div data-reveal class="space-y-stack-md text-center lg:text-left">
+<span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold">Impressionen</span>
+<h2 class="font-headline-md text-headline-md text-white">So sah das in Salzburg aus</h2>
+<p class="font-body-lg text-body-lg text-white/70">Ein Wochenende, hunderte Bierfans, eine Stadt voller Stationen: der offizielle Aftermovie der BeerTasting Challenge Salzburg 2026. Ab September schreibt Wien die Fortsetzung.</p>
+</div>
+<div data-reveal>
+<div id="yt-aftermovie" class="relative w-full aspect-video rounded-[8px] overflow-hidden border border-white/10 bg-[#0A0E24]">
+<button type="button" id="yt-aftermovie-start" class="group absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 cursor-pointer w-full h-full text-center px-6" aria-label="Aftermovie abspielen – lädt Inhalte von YouTube">
+<span class="pointer-events-none absolute inset-0 flex items-center justify-center"><span class="w-[220px] h-[220px] rounded-full opacity-[0.18] blur-3xl" style="background:radial-gradient(circle, #E8A838, transparent 70%)"></span></span>
+<span aria-hidden="true" class="material-symbols-outlined relative text-[#E8A838] transition-transform duration-300 group-hover:scale-110" style="font-size:76px">play_circle</span>
+<span class="relative font-headline-sm text-headline-sm text-white">Aftermovie ansehen</span>
+<span class="relative font-body-sm text-body-sm text-white/60">BeerTasting Challenge Salzburg 2026 · 
+Beim Abspielen wird eine Verbindung zu YouTube hergestellt.</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<script>
+(function(){
+  var btn=document.getElementById('yt-aftermovie-start');
+  if(!btn)return;
+  btn.addEventListener('click',function(){
+    var box=document.getElementById('yt-aftermovie');
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/bvawzcFmNNs?autoplay=1&rel=0';
+    f.title='BeerTasting Challenge Salzburg 2026 – Official Aftermovie';
+    f.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    f.setAttribute('allowfullscreen','');
+    f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+    f.className='absolute inset-0 w-full h-full';
+    f.style.border='0';
+    box.replaceChild(f,btn);
+  });
+})();
+</script>
 <section class="bg-surface-container-lowest px-gutter py-section-gap" id="faq">
 <div class="max-w-3xl mx-auto space-y-stack-lg">
 <div data-reveal class="text-center space-y-stack-sm">
