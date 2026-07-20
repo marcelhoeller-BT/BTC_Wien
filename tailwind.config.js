@@ -20,9 +20,9 @@ module.exports = {
         "margin-page": "32px", "section-gap": "120px", "stack-sm": "8px", "stack-md": "24px"
       },
       fontFamily: {
-        "label-caps": ["Brandon Text"], "body-lg": ["Brandon Text"], "headline-lg": ["Brandon Text"],
-        "button": ["Brandon Text"], "headline-md": ["Brandon Text"], "body-sm": ["Brandon Text"],
-        "headline-sm": ["Brandon Text"], "headline-lg-mobile": ["Brandon Text"], "body-md": ["Brandon Text"]
+        "label-caps": ["Poppins", "system-ui", "sans-serif"], "body-lg": ["Poppins", "system-ui", "sans-serif"], "headline-lg": ["Poppins", "system-ui", "sans-serif"],
+        "button": ["Poppins", "system-ui", "sans-serif"], "headline-md": ["Poppins", "system-ui", "sans-serif"], "body-sm": ["Poppins", "system-ui", "sans-serif"],
+        "headline-sm": ["Poppins", "system-ui", "sans-serif"], "headline-lg-mobile": ["Poppins", "system-ui", "sans-serif"], "body-md": ["Poppins", "system-ui", "sans-serif"]
       },
       fontSize: {
         "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
