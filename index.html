@@ -1,18 +1,18 @@
 <!DOCTYPE html><html class="light scroll-smooth" lang="de"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>BeerTasting Challenge Wien für Gastronomie &amp; Brauereien</title>
-<meta name="description" content="Digitales Gastro-Marketing für Wien: Lokale und Brauereien erreichen über die BeerTasting App neue Gäste. Ab 100 €/Monat, monatlich kündbar.">
+<title>BeerTasting Challenge Wien – Wiens Bier-Schnitzeljagd</title>
+<meta name="description" content="Verkoste dich durch Wiens Bierlokale: Stationen sammeln, Biere bewerten, Badges und Blechschild sichern. Ab 1. September 2026 in der BeerTasting App.">
 <link rel="canonical" href="https://btc-wien.vercel.app/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_AT">
 <meta property="og:url" content="https://btc-wien.vercel.app/">
-<meta property="og:title" content="BeerTasting Challenge Wien für Gastronomie &amp; Brauereien">
-<meta property="og:description" content="Digitales Gastro-Marketing für Wien: Lokale und Brauereien erreichen über die BeerTasting App neue Gäste. Ab 100 €/Monat, monatlich kündbar.">
+<meta property="og:title" content="BeerTasting Challenge Wien – Wiens Bier-Schnitzeljagd">
+<meta property="og:description" content="Verkoste dich durch Wiens Bierlokale: Stationen sammeln, Biere bewerten, Badges und Blechschild sichern. Ab 1. September 2026 in der BeerTasting App.">
 <meta property="og:image" content="https://btc-wien.vercel.app/BTC_Wien_Header_2026.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="BeerTasting Challenge Wien für Gastronomie &amp; Brauereien">
-<meta name="twitter:description" content="Digitales Gastro-Marketing für Wien: Lokale und Brauereien erreichen über die BeerTasting App neue Gäste. Ab 100 €/Monat, monatlich kündbar.">
+<meta name="twitter:title" content="BeerTasting Challenge Wien – Wiens Bier-Schnitzeljagd">
+<meta name="twitter:description" content="Verkoste dich durch Wiens Bierlokale: Stationen sammeln, Biere bewerten, Badges und Blechschild sichern. Ab 1. September 2026 in der BeerTasting App.">
 <meta name="twitter:image" content="https://btc-wien.vercel.app/BTC_Wien_Header_2026.jpg">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
@@ -71,136 +71,243 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet die Teilnahme?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nichts. Die BeerTasting App ist gratis, und die Challenge kostet dich keinen Cent extra. Du zahlst nur dein Bier – zum ganz normalen Preis der Gastronomie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie melde ich mich an?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mit einem Tipp: Die Challenge liegt direkt am Homescreen der App. Kein eigenes Formular, keine Anmeldegebühr, kein Starterkit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie wird mein Besuch gezählt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Automatisch. Wenn du dein Bier im Lokal bewertest, prüft die App deinen Standort und schaltet die Station frei. Du musst nichts scannen und nichts abstempeln lassen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie viele Lokale machen mit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zum Start sind mindestens 40 Wiener Gastronomien dabei, und es kommen laufend neue dazu. Alle teilnehmenden Lokale findest du mit Öffnungszeiten und Bierangebot auf der Challenge-Karte in der App."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lange läuft die Challenge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start ist der 1. September 2026, danach läuft sie dauerhaft weiter. Deine gesammelten Stationen und Badges bleiben erhalten, und jedes Jahr gibt es ein Gesamt-Ranking mit Preisen für die aktivsten Teilnehmer:innen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was bekomme ich für 30 Stationen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das Gold-Badge in der App und zusätzlich ein physisches Blechschild der BeerTasting Challenge Wien, das wir dir zuschicken."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body class="bg-surface-container-lowest text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopNavBar -->
 <nav class="bg-surface-container-lowest top-0 sticky border-b border-border-muted z-50">
 <div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto w-full">
 <a href="index.html" class="flex items-center"><img src="logo.svg" alt="BeerTasting" class="h-6 w-auto"></a>
-<div class="flex items-center gap-2 sm:gap-4">
-<a class="text-on-surface hover:opacity-60 transition-opacity duration-200 cursor-pointer font-button text-button text-sm sm:text-button" href="gastronomie.html" onclick="try{sessionStorage.setItem('btcwien_scroll_to_content','1')}catch(e){}">Gastronomie</a>
+<div class="hidden md:flex items-center gap-4">
+<a class="text-on-surface hover:opacity-60 transition-opacity duration-200 font-button text-button" href="#so-gehts">So funktioniert&rsquo;s</a>
 <span aria-hidden="true" class="w-px h-4 bg-border-muted"></span>
-<a class="text-on-surface hover:opacity-60 transition-opacity duration-200 cursor-pointer font-button text-button text-sm sm:text-button" href="brauerei.html" onclick="try{sessionStorage.setItem('btcwien_scroll_to_content','1')}catch(e){}">Brauerei</a>
+<a class="text-on-surface hover:opacity-60 transition-opacity duration-200 font-button text-button" href="#belohnungen">Belohnungen</a>
+<span aria-hidden="true" class="w-px h-4 bg-border-muted"></span>
+<a class="text-on-surface hover:opacity-60 transition-opacity duration-200 font-button text-button" href="#faq">FAQ</a>
+<span aria-hidden="true" class="w-px h-4 bg-border-muted"></span>
+<a class="text-text-secondary hover:text-on-surface transition-colors duration-200 font-button text-button" href="gastronomie.html">Gastronomie</a>
+<a class="text-text-secondary hover:text-on-surface transition-colors duration-200 font-button text-button" href="brauerei.html">Brauerei</a>
+<a class="ml-stack-md bg-[#E8A838] text-on-surface font-button text-button py-2 px-4 rounded-[8px] hover:opacity-90 transition-opacity duration-200" href="#app">App laden</a>
+</div>
+<button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menü öffnen" aria-expanded="false" class="md:hidden inline-flex items-center justify-center text-on-surface p-1">
+<span aria-hidden="true" class="material-symbols-outlined" style="font-size:28px">menu</span>
+</button>
+</div>
+<div id="mobile-menu" class="hidden md:hidden border-t border-border-muted bg-surface-container-lowest">
+<div class="flex flex-col px-gutter py-2">
+<a class="text-on-surface hover:opacity-60 transition-opacity py-3 font-button text-button" href="#so-gehts" onclick="closeMobileMenu()">So funktioniert&rsquo;s</a>
+<a class="text-on-surface hover:opacity-60 transition-opacity py-3 font-button text-button border-t border-border-muted" href="#belohnungen" onclick="closeMobileMenu()">Belohnungen</a>
+<a class="text-on-surface hover:opacity-60 transition-opacity py-3 font-button text-button border-t border-border-muted" href="#faq" onclick="closeMobileMenu()">FAQ</a>
+<a class="text-text-secondary hover:text-on-surface transition-colors py-3 font-button text-button border-t border-border-muted" href="gastronomie.html" onclick="closeMobileMenu()">Für Gastronomien</a>
+<a class="text-text-secondary hover:text-on-surface transition-colors py-3 font-button text-button border-t border-border-muted" href="brauerei.html" onclick="closeMobileMenu()">Für Brauereien</a>
+<a class="bg-[#E8A838] text-on-surface font-button text-button py-3 px-4 rounded-[8px] text-center hover:opacity-90 transition-opacity mt-3 mb-2" href="#app" onclick="closeMobileMenu()">App laden</a>
 </div>
 </div>
 </nav>
-<!-- Header-Banner -->
 <div class="w-full overflow-hidden bg-surface-container-lowest">
-<img src="BTC_Wien_Header_2026.jpg" alt="BeerTasting Gastro Challenge Wien – Stephansdom auf einer Wien-Karte mit Standort-Pin" class="header-banner w-full h-auto object-contain block md:h-[calc(100vh-140px)] md:max-h-[740px] md:object-cover md:object-center">
+<img src="BTC_Wien_Header_2026.jpg" alt="BeerTasting Challenge Wien – Stephansdom auf einer Wien-Karte mit Standort-Pin" class="header-banner w-full h-auto object-contain block md:h-[calc(100vh-140px)] md:max-h-[740px] md:object-cover md:object-center">
 </div>
-<!-- Hero + Zielgruppen-Weiche -->
-<header class="relative bg-surface-container-lowest pt-stack-lg flex flex-col items-center justify-center overflow-hidden">
+<header class="relative bg-surface-container-lowest pt-stack-lg pb-section-gap flex flex-col items-center justify-center overflow-hidden">
 <div class="pointer-events-none absolute inset-0 flex items-start justify-center"><div class="mt-[-4%] w-[680px] max-w-[90vw] h-[420px] rounded-full opacity-[0.12] blur-3xl" style="background:radial-gradient(circle, #E8A838, transparent 70%)"></div></div>
 <div data-reveal class="relative z-10 max-w-4xl mx-auto px-gutter text-center space-y-stack-md">
-<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">Die digitale BeerTasting Challenge Wien</h1>
-<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl mx-auto">Wiens Craft-Beer-Szene auf einer Karte. Läuft dauerhaft, mit jährlichen Rankings und Preisen. Bald auch in weiteren Städten.</p>
+<span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold">Ab 1. September 2026</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">Wiens größte Bier-Schnitzeljagd</h1>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl mx-auto">Zieh los durch Wiens Bierlokale, verkoste dich quer durch die Stadt und sammle Stationen. Je mehr du entdeckst, desto höher dein Level – bis zum Blechschild für dein Regal.</p>
+<div class="flex flex-col sm:flex-row gap-element-gap justify-center">
+<a href="https://apps.apple.com/de/app/beertasting/id1170285999" target="_blank" rel="noopener" class="btn-shine inline-flex items-center justify-center gap-2 bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] hover:opacity-90 transition-opacity"><span aria-hidden="true" class="material-symbols-outlined" style="font-size:20px">download</span>Für iPhone laden</a>
+<a href="https://play.google.com/store/apps/details?id=at.co.babos.beertasting" target="_blank" rel="noopener" class="btn-shine inline-flex items-center justify-center gap-2 bg-[#0E1330] text-white font-button text-button py-3 px-6 rounded-[8px] hover:opacity-90 transition-opacity"><span aria-hidden="true" class="material-symbols-outlined" style="font-size:20px">download</span>Für Android laden</a>
 </div>
-<div data-reveal class="relative z-10 w-full max-w-4xl mx-auto px-gutter mt-stack-lg grid grid-cols-1 sm:grid-cols-2 gap-gutter">
-<a href="gastronomie.html" class="card-hover group flex flex-col bg-surface-container-lowest p-8 rounded-[8px] border border-border-muted shadow-sm text-left">
-<span aria-hidden="true" class="material-symbols-outlined text-4xl text-[#E8A838] mb-4">storefront</span>
-<h2 class="font-headline-md text-headline-md mb-2">Gastronomie</h2>
-<p class="font-body-md text-body-md text-text-secondary flex-grow mb-6">Mehr Laufkundschaft, ganz ohne Aufwand.<br>100 €/Monat, monatlich kündbar.</p>
-<span class="btn-shine inline-flex items-center justify-center gap-2 bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] group-hover:opacity-90 transition-opacity">Für Gastronomien<span aria-hidden="true" class="material-symbols-outlined" style="font-size:20px">arrow_forward</span></span>
-</a>
-<a href="brauerei.html" class="card-hover group flex flex-col bg-surface-container-lowest p-8 rounded-[8px] border border-border-muted shadow-sm text-left">
-<span aria-hidden="true" class="material-symbols-outlined text-4xl text-[#E8A838] mb-4">sports_bar</span>
-<h2 class="font-headline-md text-headline-md mb-2">Brauerei</h2>
-<p class="font-body-md text-body-md text-text-secondary flex-grow mb-6">Portfolio-Sichtbarkeit und Analytics-Back-End. Bundles ab 300 €/Monat.</p>
-<span class="btn-shine inline-flex items-center justify-center gap-2 bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] group-hover:opacity-90 transition-opacity">Für Brauereien<span aria-hidden="true" class="material-symbols-outlined" style="font-size:20px">arrow_forward</span></span>
-</a>
+<p class="font-body-sm text-body-sm text-text-secondary">Kostenlos. Die Anmeldung zur Challenge ist ein Tipp am App-Homescreen.</p>
 </div>
 </header>
-<!-- Social Proof: BeerTasting-Kennzahlen -->
 <section class="relative bg-[#0E1330] text-white px-gutter py-stack-lg overflow-hidden">
 <div class="aurora"></div>
 <div class="relative z-10 max-w-container-max mx-auto">
-<p data-reveal class="text-center font-label-caps text-label-caps uppercase tracking-wider text-[#E8A838] mb-2">Die Plattform hinter der Challenge</p>
-<h2 data-reveal class="text-center font-headline-sm text-headline-sm text-white mb-stack-lg max-w-2xl mx-auto">Nach den erfolgreichen BeerTasting Challenges Salzburg, Wien und Linz startet nun ein neues Format</h2>
+<p data-reveal class="text-center font-label-caps text-label-caps uppercase tracking-wider text-[#E8A838] mb-2">Die Community hinter der Challenge</p>
+<h2 data-reveal class="text-center font-headline-sm text-headline-sm text-white mb-stack-lg max-w-2xl mx-auto">Du bist nicht allein unterwegs</h2>
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-<div data-reveal class="text-center">
-<div class="font-headline-md text-[28px] leading-[32px] sm:text-headline-md text-[#E8A838]"><span data-count="240000" data-suffix="+">0</span></div>
-<p class="font-body-sm text-body-sm text-white/70 mt-1">registrierte App-User</p>
-</div>
-<div data-reveal class="text-center">
-<div class="font-headline-md text-[28px] leading-[32px] sm:text-headline-md text-[#E8A838]"><span data-count="130000">0</span></div>
-<p class="font-body-sm text-body-sm text-white/70 mt-1">Newsletter-Abonnenten</p>
-</div>
-<div data-reveal class="text-center">
-<div class="font-headline-md text-[28px] leading-[32px] sm:text-headline-md text-[#E8A838]"><span data-count="5" data-suffix=" Mio.">0</span></div>
-<p class="font-body-sm text-body-sm text-white/70 mt-1">Bierbewertungen</p>
-</div>
-<div data-reveal class="text-center">
-<div class="font-headline-md text-[28px] leading-[32px] sm:text-headline-md text-[#E8A838]"><span data-count="363000" data-suffix="+">0</span></div>
-<p class="font-body-sm text-body-sm text-white/70 mt-1">Biere in der Datenbank</p>
-</div>
+<div data-reveal class="text-center"><div class="font-headline-md text-[28px] leading-[32px] sm:text-headline-md text-[#E8A838]"><span data-count="240000" data-suffix="+">0</span></div><p class="font-body-sm text-body-sm text-white/70 mt-1">registrierte App-User</p></div>
+<div data-reveal class="text-center"><div class="font-headline-md text-[28px] leading-[32px] sm:text-headline-md text-[#E8A838]"><span data-count="5" data-suffix=" Mio.">0</span></div><p class="font-body-sm text-body-sm text-white/70 mt-1">Bierbewertungen</p></div>
+<div data-reveal class="text-center"><div class="font-headline-md text-[28px] leading-[32px] sm:text-headline-md text-[#E8A838]"><span data-count="363000" data-suffix="+">0</span></div><p class="font-body-sm text-body-sm text-white/70 mt-1">Biere in der Datenbank</p></div>
+<div data-reveal class="text-center"><div class="font-headline-md text-[28px] leading-[32px] sm:text-headline-md text-[#E8A838]"><span data-count="40" data-suffix="+">0</span></div><p class="font-body-sm text-body-sm text-white/70 mt-1">Wiener Lokale zum Start</p></div>
 </div>
 </div>
 </section>
-<!-- Mechanik-Teaser -->
-<section class="bg-surface-container-lowest px-gutter py-section-gap">
+<section class="bg-surface-container-lowest px-gutter py-section-gap" id="so-gehts">
 <div class="max-w-container-max mx-auto space-y-stack-lg">
 <div data-reveal class="text-center space-y-stack-sm">
-<span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold">Mechanik</span>
-<h2 class="font-headline-md text-headline-md text-on-surface">So funktioniert die Challenge</h2>
-<p class="font-body-lg text-body-lg text-text-secondary">Start: 1. September 2026 · Läuft dauerhaft, kein Enddatum · Mindestens 40 teilnehmende Wiener Gastronomien.</p>
+<span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold">So funktioniert&rsquo;s</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Vier Schritte, dann läuft&rsquo;s</h2>
+<p class="font-body-lg text-body-lg text-text-secondary">Kein Starterkit, keine Anmeldegebühr, kein Zettel zum Abstempeln.</p>
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
-<!-- Video links -->
 <div data-reveal class="relative flex justify-center">
 <div class="pointer-events-none absolute inset-0 flex items-center justify-center"><div class="w-[280px] h-[280px] rounded-full opacity-[0.14] blur-3xl" style="background:radial-gradient(circle, #E8A838, transparent 70%)"></div></div>
-<video id="phone-demo-video" class="relative z-10 w-full max-w-[300px] h-auto block" poster="phone-mockup-poster.jpg" muted loop playsinline preload="none" aria-label="Vorschau: BeerTasting App im Einsatz während der Challenge">
+<video id="phone-demo-video" class="relative z-10 w-full max-w-[300px] h-auto block" poster="phone-mockup-poster.jpg" muted loop playsinline preload="none" aria-label="Vorschau: die BeerTasting App während der Challenge">
 <source src="phone-mockup.mp4" type="video/mp4">
 </video>
 </div>
-<!-- Kacheln rechts -->
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
 <div data-reveal class="card-hover bg-surface-container-low p-6 rounded-[8px] border border-border-muted text-center">
-<span aria-hidden="true" class="material-symbols-outlined text-4xl text-[#E8A838] mb-4">storefront</span>
-<h3 class="font-headline-sm text-headline-sm mb-2">1. Lokal besuchen</h3>
-<p class="font-body-md text-body-md text-text-secondary">Gäste kommen in ein teilnehmendes Wiener Lokal.</p>
+<span aria-hidden="true" class="material-symbols-outlined text-4xl text-[#E8A838] mb-4">map</span>
+<h3 class="font-headline-sm text-headline-sm mb-2">1. Lokal aussuchen</h3>
+<p class="font-body-md text-body-md text-text-secondary">Öffne die Challenge-Karte in der App und such dir ein teilnehmendes Lokal in deiner Nähe.</p>
 </div>
 <div data-reveal class="card-hover bg-surface-container-low p-6 rounded-[8px] border border-border-muted text-center">
 <span aria-hidden="true" class="material-symbols-outlined text-4xl text-[#E8A838] mb-4">sports_bar</span>
-<h3 class="font-headline-sm text-headline-sm mb-2">2. Bier bestellen &amp; verkosten</h3>
-<p class="font-body-md text-body-md text-text-secondary">Sie bestellen ein Bier – zum ganz normalen Preis.</p>
+<h3 class="font-headline-sm text-headline-sm mb-2">2. Bier bestellen</h3>
+<p class="font-body-md text-body-md text-text-secondary">Bestell ein Bier von der regulären Karte – zum ganz normalen Preis, ohne Aufpreis.</p>
 </div>
 <div data-reveal class="card-hover bg-surface-container-low p-6 rounded-[8px] border border-border-muted text-center">
 <span aria-hidden="true" class="material-symbols-outlined text-4xl text-[#E8A838] mb-4">my_location</span>
-<h3 class="font-headline-sm text-headline-sm mb-2">3. In der App bewerten</h3>
-<p class="font-body-md text-body-md text-text-secondary">Die App bestätigt den Check-in automatisch per Standort.</p>
+<h3 class="font-headline-sm text-headline-sm mb-2">3. Bewerten</h3>
+<p class="font-body-md text-body-md text-text-secondary">Bewerte dein Bier in der App. Dein Standort bestätigt den Besuch automatisch.</p>
 </div>
 <div data-reveal class="card-hover bg-surface-container-low p-6 rounded-[8px] border border-border-muted text-center">
 <span aria-hidden="true" class="material-symbols-outlined text-4xl text-[#E8A838] mb-4">workspace_premium</span>
-<h3 class="font-headline-sm text-headline-sm mb-2">4. Stationen sammeln</h3>
-<p class="font-body-md text-body-md text-text-secondary">Je mehr Lokale, desto höher die Belohnung.</p>
+<h3 class="font-headline-sm text-headline-sm mb-2">4. Station sichern</h3>
+<p class="font-body-md text-body-md text-text-secondary">Die Station gehört dir. Weiter zur nächsten – dein Rang im Leaderboard steigt mit.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- Section: Zielgruppen-CTA (Wiederholung am Seitenende) -->
-<section class="bg-[#F3F3F4] px-gutter py-section-gap">
+<section class="bg-[#F3F3F4] px-gutter py-section-gap" id="belohnungen">
 <div class="max-w-container-max mx-auto space-y-stack-lg">
-<div data-reveal class="text-center space-y-stack-sm">
-<h2 class="font-headline-md text-headline-md text-on-surface">Welcher Weg passt zu dir?</h2>
+<div data-reveal class="text-center space-y-stack-sm max-w-2xl mx-auto">
+<span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold">Belohnungen</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Je mehr Stationen, desto höher dein Level</h2>
+<p class="font-body-lg text-body-lg text-text-secondary">Dazu ein Leaderboard, in dem du dich mit der Community misst, und jedes Jahr ein Gesamt-Ranking mit Preisen.</p>
 </div>
-<div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-gutter">
-<a href="gastronomie.html" class="card-hover group flex flex-col bg-surface-container-lowest p-8 rounded-[8px] border border-border-muted shadow-sm text-left">
-<span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold mb-2">Für Gastronomien</span>
-<h3 class="font-headline-sm text-headline-sm mb-2">Mehr Gäste, ohne Aufwand.</h3>
-<p class="font-body-md text-body-md text-text-secondary flex-grow mb-6">100 €/Monat, monatlich kündbar. Kein Personal, kein Material, keine Schulung.</p>
-<span class="btn-shine inline-flex items-center justify-center gap-2 bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] group-hover:opacity-90 transition-opacity">Mehr für Gastronomien<span aria-hidden="true" class="material-symbols-outlined" style="font-size:20px">arrow_forward</span></span>
-</a>
-<a href="brauerei.html" class="card-hover group flex flex-col bg-surface-container-lowest p-8 rounded-[8px] border border-border-muted shadow-sm text-left">
-<span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold mb-2">Für Brauereien</span>
-<h3 class="font-headline-sm text-headline-sm mb-2">Mehr Absatz, nachweisbar.</h3>
-<p class="font-body-md text-body-md text-text-secondary flex-grow mb-6">Bundles ab 300 €/Monat inkl. Analytics-Back-End und Portfolio-Sichtbarkeit.</p>
-<span class="btn-shine inline-flex items-center justify-center gap-2 bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] group-hover:opacity-90 transition-opacity">Mehr für Brauereien<span aria-hidden="true" class="material-symbols-outlined" style="font-size:20px">arrow_forward</span></span>
-</a>
+<div class="flex flex-col sm:flex-row justify-center gap-gutter max-w-5xl mx-auto">
+<div data-reveal class="card-hover flex-1 bg-surface-container-lowest p-6 rounded-[8px] border border-border-muted text-center max-w-xs w-full mx-auto">
+<img src="Level-Bronze.png" alt="BeerTasting Challenge Wien – Bronze-Badge" loading="lazy" class="w-24 h-24 object-contain mx-auto mb-2">
+<div class="font-headline-sm text-headline-sm mb-1">Bronze</div>
+<div class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold mb-2">10 Stationen</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Digitales Badge in der App</p>
+</div>
+<div data-reveal class="card-hover flex-1 bg-surface-container-lowest p-6 rounded-[8px] border border-border-muted text-center max-w-xs w-full mx-auto">
+<img src="Level-Silver.png" alt="BeerTasting Challenge Wien – Silber-Badge" loading="lazy" class="w-24 h-24 object-contain mx-auto mb-2">
+<div class="font-headline-sm text-headline-sm mb-1">Silber</div>
+<div class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold mb-2">20 Stationen</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Silber-Badge in der App</p>
+</div>
+<div data-reveal class="card-hover flex-1 bg-surface-container-lowest p-6 rounded-[8px] border border-border-muted text-center max-w-xs w-full mx-auto">
+<img src="Level-Gold.png" alt="BeerTasting Challenge Wien – Gold-Badge" loading="lazy" class="w-24 h-24 object-contain mx-auto mb-2">
+<div class="font-headline-sm text-headline-sm mb-1">Gold</div>
+<div class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold mb-2">30 Stationen</div>
+<p class="font-body-sm text-body-sm text-text-secondary">Gold-Badge <strong>und ein Blechschild per Post</strong></p>
+</div>
 </div>
 </div>
 </section>
-<!-- Footer -->
+<section class="bg-surface-container-lowest px-gutter py-section-gap" id="faq">
+<div class="max-w-3xl mx-auto space-y-stack-lg">
+<div data-reveal class="text-center space-y-stack-sm">
+<span class="font-label-caps text-sm text-[#E8A838] uppercase tracking-wider font-bold">FAQ</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Häufige Fragen</h2>
+</div>
+<div class="space-y-3">
+<details data-reveal class="group bg-[#F3F3F4] rounded-[8px] border border-border-muted overflow-hidden">
+<summary class="flex justify-between items-center gap-4 cursor-pointer list-none p-5 font-headline-sm text-headline-sm text-on-surface">Was kostet die Teilnahme?<span aria-hidden="true" class="material-symbols-outlined text-[#E8A838] transition-transform group-open:rotate-180 shrink-0">expand_more</span></summary>
+<div class="px-5 pb-5 font-body-md text-body-md text-text-secondary">Nichts. Die BeerTasting App ist gratis, und die Challenge kostet dich keinen Cent extra. Du zahlst nur dein Bier – zum ganz normalen Preis der Gastronomie.</div>
+</details>
+<details data-reveal class="group bg-[#F3F3F4] rounded-[8px] border border-border-muted overflow-hidden">
+<summary class="flex justify-between items-center gap-4 cursor-pointer list-none p-5 font-headline-sm text-headline-sm text-on-surface">Wie melde ich mich an?<span aria-hidden="true" class="material-symbols-outlined text-[#E8A838] transition-transform group-open:rotate-180 shrink-0">expand_more</span></summary>
+<div class="px-5 pb-5 font-body-md text-body-md text-text-secondary">Mit einem Tipp: Die Challenge liegt direkt am Homescreen der App. Kein eigenes Formular, keine Anmeldegebühr, kein Starterkit.</div>
+</details>
+<details data-reveal class="group bg-[#F3F3F4] rounded-[8px] border border-border-muted overflow-hidden">
+<summary class="flex justify-between items-center gap-4 cursor-pointer list-none p-5 font-headline-sm text-headline-sm text-on-surface">Wie wird mein Besuch gezählt?<span aria-hidden="true" class="material-symbols-outlined text-[#E8A838] transition-transform group-open:rotate-180 shrink-0">expand_more</span></summary>
+<div class="px-5 pb-5 font-body-md text-body-md text-text-secondary">Automatisch. Wenn du dein Bier im Lokal bewertest, prüft die App deinen Standort und schaltet die Station frei. Du musst nichts scannen und nichts abstempeln lassen.</div>
+</details>
+<details data-reveal class="group bg-[#F3F3F4] rounded-[8px] border border-border-muted overflow-hidden">
+<summary class="flex justify-between items-center gap-4 cursor-pointer list-none p-5 font-headline-sm text-headline-sm text-on-surface">Wie viele Lokale machen mit?<span aria-hidden="true" class="material-symbols-outlined text-[#E8A838] transition-transform group-open:rotate-180 shrink-0">expand_more</span></summary>
+<div class="px-5 pb-5 font-body-md text-body-md text-text-secondary">Zum Start sind mindestens 40 Wiener Gastronomien dabei, und es kommen laufend neue dazu. Alle teilnehmenden Lokale findest du mit Öffnungszeiten und Bierangebot auf der Challenge-Karte in der App.</div>
+</details>
+<details data-reveal class="group bg-[#F3F3F4] rounded-[8px] border border-border-muted overflow-hidden">
+<summary class="flex justify-between items-center gap-4 cursor-pointer list-none p-5 font-headline-sm text-headline-sm text-on-surface">Wie lange läuft die Challenge?<span aria-hidden="true" class="material-symbols-outlined text-[#E8A838] transition-transform group-open:rotate-180 shrink-0">expand_more</span></summary>
+<div class="px-5 pb-5 font-body-md text-body-md text-text-secondary">Start ist der 1. September 2026, danach läuft sie dauerhaft weiter. Deine gesammelten Stationen und Badges bleiben erhalten, und jedes Jahr gibt es ein Gesamt-Ranking mit Preisen für die aktivsten Teilnehmer:innen.</div>
+</details>
+<details data-reveal class="group bg-[#F3F3F4] rounded-[8px] border border-border-muted overflow-hidden">
+<summary class="flex justify-between items-center gap-4 cursor-pointer list-none p-5 font-headline-sm text-headline-sm text-on-surface">Was bekomme ich für 30 Stationen?<span aria-hidden="true" class="material-symbols-outlined text-[#E8A838] transition-transform group-open:rotate-180 shrink-0">expand_more</span></summary>
+<div class="px-5 pb-5 font-body-md text-body-md text-text-secondary">Das Gold-Badge in der App und zusätzlich ein physisches Blechschild der BeerTasting Challenge Wien, das wir dir zuschicken.</div>
+</details>
+</div>
+</div>
+</section>
+<section class="relative bg-[#0E1330] text-white px-gutter py-section-gap overflow-hidden" id="app">
+<div class="aurora"></div>
+<div data-reveal class="relative z-10 max-w-2xl mx-auto text-center space-y-stack-md">
+<h2 class="font-headline-md text-headline-md text-white">Hol dir die App und leg los</h2>
+<p class="font-body-lg text-body-lg text-white/70">Die Challenge startet am 1. September 2026. Wer die App schon hat, ist mit einem Tipp dabei.</p>
+<div class="flex flex-col sm:flex-row gap-element-gap justify-center">
+<a href="https://apps.apple.com/de/app/beertasting/id1170285999" target="_blank" rel="noopener" class="btn-shine inline-flex items-center justify-center gap-2 bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] hover:opacity-90 transition-opacity"><span aria-hidden="true" class="material-symbols-outlined" style="font-size:20px">download</span>Für iPhone laden</a>
+<a href="https://play.google.com/store/apps/details?id=at.co.babos.beertasting" target="_blank" rel="noopener" class="btn-shine inline-flex items-center justify-center gap-2 bg-[#0E1330] text-white font-button text-button py-3 px-6 rounded-[8px] hover:opacity-90 transition-opacity"><span aria-hidden="true" class="material-symbols-outlined" style="font-size:20px">download</span>Für Android laden</a>
+</div>
+</div>
+</section>
+<section class="bg-[#F3F3F4] px-gutter py-stack-lg border-t border-border-muted">
+<div data-reveal class="max-w-container-max mx-auto text-center space-y-stack-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Du betreibst ein Lokal oder eine Brauerei?</h2>
+<p class="font-body-md text-body-md text-text-secondary">Werde Station auf der Challenge-Karte und erreiche Wiens Bier-Community.
+<a href="gastronomie.html" class="text-[#E8A838] underline hover:opacity-80">Infos für Gastronomien</a> ·
+<a href="brauerei.html" class="text-[#E8A838] underline hover:opacity-80">Infos für Brauereien</a></p>
+</div>
+</section>
 <footer class="bg-surface-container-low py-8 border-t border-border-muted">
 <div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-4">
 <div class="flex items-center"><img src="logo.svg" alt="BeerTasting" class="h-6 w-auto"></div>
@@ -212,6 +319,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 </div>
 </div>
 </footer>
+<script>
+function toggleMobileMenu(){var m=document.getElementById('mobile-menu');var b=document.getElementById('mobile-menu-btn');var open=m.classList.toggle('hidden')===false;b.setAttribute('aria-expanded',open?'true':'false');b.querySelector('.material-symbols-outlined').textContent=open?'close':'menu';}
+function closeMobileMenu(){var m=document.getElementById('mobile-menu');var b=document.getElementById('mobile-menu-btn');m.classList.add('hidden');b.setAttribute('aria-expanded','false');b.querySelector('.material-symbols-outlined').textContent='menu';}
+</script>
 <script>
 /* --- Scroll-Reveal (gestaffelt) + Count-up --- */
 (function(){
