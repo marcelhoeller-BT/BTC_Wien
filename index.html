@@ -55,7 +55,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <!-- TopNavBar -->
 <nav class="bg-surface-container-lowest top-0 sticky border-b border-border-muted z-50">
 <div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto w-full">
-<a href="#" class="flex items-center"><img src="logo.svg" alt="BeerTasting" class="h-6 w-auto"></a>
+<a href="index.html" class="flex items-center"><img src="logo.svg" alt="BeerTasting" class="h-6 w-auto"></a>
 <div class="flex items-center gap-2 sm:gap-4">
 <a class="text-on-surface hover:opacity-60 transition-opacity duration-200 cursor-pointer font-button text-button text-sm sm:text-button" href="gastronomie.html" onclick="try{sessionStorage.setItem('btcwien_scroll_to_content','1')}catch(e){}">Gastronomie</a>
 <span aria-hidden="true" class="w-px h-4 bg-border-muted"></span>
@@ -187,6 +187,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <div class="flex gap-4">
 <a href="impressum.html" class="font-body-sm text-text-secondary hover:text-on-surface transition-colors">Impressum</a>
 <a href="datenschutz.html" class="font-body-sm text-text-secondary hover:text-on-surface transition-colors">Datenschutz</a>
+<button type="button" onclick="btcwienCookieSettings()" class="font-body-sm text-text-secondary hover:text-on-surface transition-colors">Cookie-Einstellungen</button>
 </div>
 </div>
 </footer>
@@ -285,22 +286,41 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <script>
 (function(){
   var KEY='btcwien_cookie_consent';
-  try{
-    if(!localStorage.getItem(KEY)){
-      var b=document.getElementById('cookie-banner');
-      if(b){ b.hidden=false; setTimeout(function(){ b.classList.add('is-visible'); }, 400); }
-    }
-  }catch(e){}
+  var analyticsLoaded=false;
+  function loadAnalytics(){
+    if(analyticsLoaded) return;
+    analyticsLoaded=true;
+    ['/_vercel/insights/script.js','/_vercel/speed-insights/script.js'].forEach(function(src){
+      var s=document.createElement('script');
+      s.defer=true; s.src=src;
+      document.body.appendChild(s);
+    });
+  }
+  function banner(){ return document.getElementById('cookie-banner'); }
+  function showBanner(){
+    var b=banner();
+    if(b){ b.hidden=false; setTimeout(function(){ b.classList.add('is-visible'); }, 400); }
+  }
+  function hideBanner(){
+    var b=banner();
+    if(b){ b.classList.remove('is-visible'); setTimeout(function(){ b.hidden=true; }, 500); }
+  }
+  var stored=null;
+  try{ stored=localStorage.getItem(KEY); }catch(e){}
+  if(stored==='accepted'){ loadAnalytics(); }
+  else if(!stored){ showBanner(); }
   function setConsent(val){
     try{ localStorage.setItem(KEY, val); }catch(e){}
-    var b=document.getElementById('cookie-banner');
-    if(b){ b.classList.remove('is-visible'); setTimeout(function(){ b.hidden=true; }, 500); }
+    if(val==='accepted') loadAnalytics();
+    hideBanner();
   }
   var a=document.getElementById('cookie-accept'), r=document.getElementById('cookie-reject');
   if(a) a.addEventListener('click', function(){ setConsent('accepted'); });
   if(r) r.addEventListener('click', function(){ setConsent('necessary'); });
+  window.btcwienCookieSettings=function(){
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    showBanner();
+  };
 })();
 </script>
-<script defer src="/_vercel/insights/script.js"></script>
-<script defer src="/_vercel/speed-insights/script.js"></script>
 </body></html>

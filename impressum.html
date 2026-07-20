@@ -50,6 +50,7 @@
 <div class="flex gap-4">
 <a href="impressum.html" class="font-body-sm text-text-secondary hover:text-on-surface transition-colors">Impressum</a>
 <a href="datenschutz.html" class="font-body-sm text-text-secondary hover:text-on-surface transition-colors">Datenschutz</a>
+<button type="button" onclick="btcwienCookieSettings()" class="font-body-sm text-text-secondary hover:text-on-surface transition-colors">Cookie-Einstellungen</button>
 </div>
 </div>
 </footer>
@@ -79,22 +80,41 @@
 <script>
 (function(){
   var KEY='btcwien_cookie_consent';
-  try{
-    if(!localStorage.getItem(KEY)){
-      var b=document.getElementById('cookie-banner');
-      if(b){ b.hidden=false; setTimeout(function(){ b.classList.add('is-visible'); }, 400); }
-    }
-  }catch(e){}
+  var analyticsLoaded=false;
+  function loadAnalytics(){
+    if(analyticsLoaded) return;
+    analyticsLoaded=true;
+    ['/_vercel/insights/script.js','/_vercel/speed-insights/script.js'].forEach(function(src){
+      var s=document.createElement('script');
+      s.defer=true; s.src=src;
+      document.body.appendChild(s);
+    });
+  }
+  function banner(){ return document.getElementById('cookie-banner'); }
+  function showBanner(){
+    var b=banner();
+    if(b){ b.hidden=false; setTimeout(function(){ b.classList.add('is-visible'); }, 400); }
+  }
+  function hideBanner(){
+    var b=banner();
+    if(b){ b.classList.remove('is-visible'); setTimeout(function(){ b.hidden=true; }, 500); }
+  }
+  var stored=null;
+  try{ stored=localStorage.getItem(KEY); }catch(e){}
+  if(stored==='accepted'){ loadAnalytics(); }
+  else if(!stored){ showBanner(); }
   function setConsent(val){
     try{ localStorage.setItem(KEY, val); }catch(e){}
-    var b=document.getElementById('cookie-banner');
-    if(b){ b.classList.remove('is-visible'); setTimeout(function(){ b.hidden=true; }, 500); }
+    if(val==='accepted') loadAnalytics();
+    hideBanner();
   }
   var a=document.getElementById('cookie-accept'), r=document.getElementById('cookie-reject');
   if(a) a.addEventListener('click', function(){ setConsent('accepted'); });
   if(r) r.addEventListener('click', function(){ setConsent('necessary'); });
+  window.btcwienCookieSettings=function(){
+    try{ localStorage.removeItem(KEY); }catch(e){}
+    showBanner();
+  };
 })();
 </script>
-<script defer src="/_vercel/insights/script.js"></script>
-<script defer src="/_vercel/speed-insights/script.js"></script>
 </body></html>
