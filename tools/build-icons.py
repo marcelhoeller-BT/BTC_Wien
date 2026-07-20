@@ -49,5 +49,21 @@ pyftsubset([
     "--flavor=woff2",
     "--output-file=" + str(OUT),
 ])
-print(f"{len(icons)} Icons -> {OUT.relative_to(ROOT)} ({OUT.stat().st_size:,} Bytes)")
+# Cache-Busting: Der Dateiname bleibt gleich, deshalb bekommt die
+# @font-face-Regel einen Hash der Fontdatei als Query angehaengt.
+# Ohne das liefern Browser nach einem Rebuild die alte Datei aus dem
+# Cache aus - dann erscheinen die Ligaturnamen als Text ("INVENTORY_2").
+import hashlib, re as _re
+hash8 = hashlib.md5(OUT.read_bytes()).hexdigest()[:8]
+css = ROOT / "tailwind-input.css"
+inhalt = css.read_text(encoding="utf-8")
+neu_inhalt = _re.sub(
+    r"url\('fonts/material-symbols-outlined\.subset\.woff2(?:\?v=[0-9a-f]+)?'\)",
+    f"url('fonts/material-symbols-outlined.subset.woff2?v={hash8}')",
+    inhalt)
+if neu_inhalt != inhalt:
+    css.write_text(neu_inhalt, encoding="utf-8")
+
+print(f"{len(icons)} Icons -> {OUT.relative_to(ROOT)} ({OUT.stat().st_size:,} Bytes, ?v={hash8})")
 print("   " + ", ".join(sorted(icons)))
+print("Danach 'npm run build' ausfuehren, damit styles.css den neuen Hash uebernimmt.")
