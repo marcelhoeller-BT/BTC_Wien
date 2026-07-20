@@ -1,3 +1,33 @@
+/* --- Selbst gehostete Icon-Font (Material Symbols, Apache 2.0) --------------
+   Ersetzt den frueheren Request an fonts.googleapis.com. Die Datei ist auf die
+   11 tatsaechlich verwendeten Icons reduziert (2,8 KB statt 3,96 MB).
+   Neues Icon noetig? In den HTML-Dateien ergaenzen, dann:
+   npm run build:icons
+   --------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('fonts/material-symbols-outlined.subset.woff2') format('woff2');
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
