@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://btc-wien.vercel.app/sitemap.xml
+Sitemap: https://challenge.beertasting.com/sitemap.xml

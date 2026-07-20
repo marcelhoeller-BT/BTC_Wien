@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://btc-wien.vercel.app/</loc>
+    <loc>https://challenge.beertasting.com/</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://btc-wien.vercel.app/gastronomie.html</loc>
+    <loc>https://challenge.beertasting.com/gastronomie.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://btc-wien.vercel.app/brauerei.html</loc>
+    <loc>https://challenge.beertasting.com/brauerei.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://btc-wien.vercel.app/impressum.html</loc>
+    <loc>https://challenge.beertasting.com/impressum.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://btc-wien.vercel.app/datenschutz.html</loc>
+    <loc>https://challenge.beertasting.com/datenschutz.html</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
