@@ -27,12 +27,12 @@ module.exports = {
       fontSize: {
         "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
         "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
-        "headline-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+        "headline-lg": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
         "button": ["16px", { "lineHeight": "1", "fontWeight": "700" }],
-        "headline-md": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+        "headline-md": ["30px", { "lineHeight": "38px", "fontWeight": "700" }],
         "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
-        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
-        "headline-lg-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+        "headline-sm": ["21px", { "lineHeight": "28px", "fontWeight": "500" }],
+        "headline-lg-mobile": ["30px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
         "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
       }
     }
