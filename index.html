@@ -47,7 +47,19 @@ html.anim-ready [data-reveal].is-visible { opacity: 1; transform: none; }
   .btn-shine:hover::after { animation: none; }
 }
 /* --- Sichtbarer Fokus-State --- */
-a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offset: 2px; }</style>
+a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offset: 2px; }
+/* --- Impressionen-Karussell --- */
+.btc-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1); }
+.btc-slide.is-active { opacity: 1; }
+.btc-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 999px; background: rgba(255,255,255,0.88); color: #1A1C1C; transition: background 0.2s ease, opacity 0.2s ease; opacity: 0; }
+.btc-carousel:hover .btc-nav, .btc-nav:focus-visible { opacity: 1; }
+.btc-nav:hover { background: #fff; }
+.btc-prev { left: 12px; } .btc-next { right: 12px; }
+.btc-dots { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; gap: 8px; padding: 7px 12px; border-radius: 999px; background: rgba(14,19,48,0.42); }
+.btc-dot { width: 8px; height: 8px; border-radius: 999px; background: rgba(255,255,255,0.55); transition: background 0.25s ease, width 0.25s ease; }
+.btc-dot.is-active { background: #E8A838; width: 22px; }
+@media (max-width: 767px) { .btc-nav { opacity: 1; width: 38px; height: 38px; } }
+@media (prefers-reduced-motion: reduce) { .btc-slide { transition: none; } }</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -259,6 +271,28 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <img src="Badge_Sonderwertung.png" alt="BeerTasting Gastro Challenge Wien – Badge der Sonderwertung" loading="lazy" class="w-24 h-24 object-contain mx-auto mb-2">
 <h3 class="font-headline-sm text-headline-sm mb-2">Sonderwertung</h3>
 <p class="font-body-md text-body-md text-text-secondary">Wer jede einzelne Station der Challenge besucht, kommt in eine eigene Wertung mit zahlreichen Sachpreisen – darunter ein Bieradventkalender, ein Jahresvorrat Bier und Brauerei-Merch (in Planung).</p>
+</div>
+</div>
+</section>
+<!-- Section: Impressionen-Karussell -->
+<section class="bg-surface-container-lowest px-gutter py-section-gap" id="galerie">
+<div class="max-w-container-max mx-auto space-y-stack-md">
+<div data-reveal class="text-center max-w-2xl mx-auto space-y-stack-sm">
+<span class="font-label-caps text-[18px] leading-[24px] text-[#E8A838] uppercase tracking-wider font-bold">Galerie</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">So sieht die Challenge aus</h2>
+</div>
+<div data-reveal class="btc-carousel relative max-w-4xl mx-auto rounded-[8px] overflow-hidden border border-border-muted bg-[#F3F3F4]" role="region" aria-roledescription="Karussell" aria-label="Impressionen der BeerTasting Challenge">
+<div class="btc-slides relative w-full aspect-video">
+<img src="impressionen/wien-1.webp" srcset="impressionen/wien-1-sm.webp 640w, impressionen/wien-1.webp 1280w" sizes="(max-width: 768px) 100vw, 896px" width="1280" height="720" alt="Teilnehmer der BeerTasting Challenge vor einem Partnerlokal" class="btc-slide is-active" fetchpriority="low" decoding="async">
+<img data-src="impressionen/wien-2.webp" data-srcset="impressionen/wien-2-sm.webp 640w, impressionen/wien-2.webp 1280w" sizes="(max-width: 768px) 100vw, 896px" width="1280" height="720" alt="Frisch gezapftes Bier im Tastingglas vor einem Gastgarten" class="btc-slide" loading="lazy" decoding="async">
+<img data-src="impressionen/wien-3.webp" data-srcset="impressionen/wien-3-sm.webp 640w, impressionen/wien-3.webp 1280w" sizes="(max-width: 768px) 100vw, 896px" width="1280" height="720" alt="Drei Teilnehmer stoßen mit Bier an einer Station an" class="btc-slide" loading="lazy" decoding="async">
+<img data-src="impressionen/wien-4.webp" data-srcset="impressionen/wien-4-sm.webp 640w, impressionen/wien-4.webp 1280w" sizes="(max-width: 768px) 100vw, 896px" width="1280" height="720" alt="Gruppe von Teilnehmern in Challenge-Shirts vor einer Station" class="btc-slide" loading="lazy" decoding="async">
+<img data-src="impressionen/wien-5.webp" data-srcset="impressionen/wien-5-sm.webp 640w, impressionen/wien-5.webp 1280w" sizes="(max-width: 768px) 100vw, 896px" width="1280" height="720" alt="Belebte Gasse mit Bierständen während der Challenge" class="btc-slide" loading="lazy" decoding="async">
+<img data-src="impressionen/wien-6.webp" data-srcset="impressionen/wien-6-sm.webp 640w, impressionen/wien-6.webp 1280w" sizes="(max-width: 768px) 100vw, 896px" width="1280" height="720" alt="Teilnehmer an der Theke eines teilnehmenden Lokals" class="btc-slide" loading="lazy" decoding="async">
+</div>
+<button type="button" class="btc-nav btc-prev" aria-label="Vorheriges Bild"><span aria-hidden="true" class="material-symbols-outlined">chevron_left</span></button>
+<button type="button" class="btc-nav btc-next" aria-label="Nächstes Bild"><span aria-hidden="true" class="material-symbols-outlined">chevron_right</span></button>
+<div class="btc-dots" role="tablist" aria-label="Bild auswählen"></div>
 </div>
 </div>
 </section>
@@ -514,6 +548,58 @@ function closeMobileMenu(){var m=document.getElementById('mobile-menu');var b=do
     try{ localStorage.removeItem(KEY); }catch(e){}
     showBanner();
   };
+})();
+</script>
+<script>
+(function(){
+  var root=document.querySelector('.btc-carousel');
+  if(!root)return;
+  var slides=[].slice.call(root.querySelectorAll('.btc-slide'));
+  if(slides.length<2)return;
+  var dotsBox=root.querySelector('.btc-dots'), i=0, timer=null, paused=false;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  slides.forEach(function(s,n){
+    var d=document.createElement('button');
+    d.type='button'; d.className='btc-dot'+(n===0?' is-active':'');
+    d.setAttribute('role','tab'); d.setAttribute('aria-label','Bild '+(n+1)+' von '+slides.length);
+    d.addEventListener('click',function(){ go(n); restart(); });
+    dotsBox.appendChild(d);
+  });
+  var dots=[].slice.call(dotsBox.children);
+  function load(n){
+    var s=slides[n];
+    if(s && s.dataset.src){ s.srcset=s.dataset.srcset||''; s.src=s.dataset.src; delete s.dataset.src; }
+  }
+  function go(n){
+    i=(n+slides.length)%slides.length;
+    load(i); load((i+1)%slides.length);
+    slides.forEach(function(s,k){ s.classList.toggle('is-active',k===i); });
+    dots.forEach(function(d,k){ d.classList.toggle('is-active',k===i); d.setAttribute('aria-selected',k===i); });
+  }
+  function restart(){ if(timer)clearInterval(timer); if(!reduce) timer=setInterval(function(){ if(!paused) go(i+1); },5000); }
+  root.querySelector('.btc-prev').addEventListener('click',function(){ go(i-1); restart(); });
+  root.querySelector('.btc-next').addEventListener('click',function(){ go(i+1); restart(); });
+  root.addEventListener('mouseenter',function(){ paused=true; });
+  root.addEventListener('mouseleave',function(){ paused=false; });
+  root.addEventListener('focusin',function(){ paused=true; });
+  root.addEventListener('focusout',function(){ paused=false; });
+  root.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft'){ go(i-1); restart(); } else if(e.key==='ArrowRight'){ go(i+1); restart(); }
+  });
+  var x0=null;
+  root.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+  root.addEventListener('touchend',function(e){
+    if(x0===null)return;
+    var dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>40){ go(dx<0?i+1:i-1); restart(); }
+    x0=null;
+  },{passive:true});
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){
+      en.forEach(function(t){ paused=!t.isIntersecting; if(t.isIntersecting) load(1); });
+    },{threshold:0.2}).observe(root);
+  }
+  restart();
 })();
 </script>
 </body></html>
