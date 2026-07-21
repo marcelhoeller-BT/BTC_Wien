@@ -114,6 +114,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 .calc-slider::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: #E8A838; border: 3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.25); cursor: pointer; }
 .calc-slider::-moz-range-track { height: 6px; border-radius: 999px; background: #E0E0E0; }
 .calc-slider:focus-visible { outline: 2px solid #E8A838; outline-offset: 4px; }
+#mobile-menu-btn .icon-close { display: none; }
+#mobile-menu-btn[aria-expanded="true"] .icon-menu { display: none; }
+#mobile-menu-btn[aria-expanded="true"] .icon-close { display: block; }
 /* --- Impressionen-Karussell --- */
 .btc-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1); }
 .btc-slide.is-active { opacity: 1; }
@@ -185,7 +188,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 </div>
 <!-- Mobile: Hamburger -->
 <button type="button" id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menü öffnen" aria-expanded="false" class="md:hidden inline-flex items-center justify-center text-on-surface p-1">
-<span aria-hidden="true" class="material-symbols-outlined" style="font-size:28px">menu</span>
+<svg class="icon-menu" aria-hidden="true" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" aria-hidden="true" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
 </button>
 </div>
 <!-- Mobile-Nav-Panel -->
@@ -557,8 +560,8 @@ Infos für Gastronomien
 <span aria-hidden="true" class="material-symbols-outlined">arrow_upward</span>
 </button>
 <script>
-function toggleMobileMenu(){var m=document.getElementById('mobile-menu');var b=document.getElementById('mobile-menu-btn');var open=m.classList.toggle('hidden')===false;b.setAttribute('aria-expanded',open?'true':'false');b.querySelector('.material-symbols-outlined').textContent=open?'close':'menu';}
-function closeMobileMenu(){var m=document.getElementById('mobile-menu');var b=document.getElementById('mobile-menu-btn');m.classList.add('hidden');b.setAttribute('aria-expanded','false');b.querySelector('.material-symbols-outlined').textContent='menu';}
+function toggleMobileMenu(){var m=document.getElementById('mobile-menu');var b=document.getElementById('mobile-menu-btn');var open=m.classList.toggle('hidden')===false;b.setAttribute('aria-expanded',open?'true':'false');b.setAttribute('aria-label',open?'Menü schließen':'Menü öffnen');}
+function closeMobileMenu(){var m=document.getElementById('mobile-menu');var b=document.getElementById('mobile-menu-btn');m.classList.add('hidden');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Menü öffnen');}
 (function(){var t=document.getElementById('to-top');window.addEventListener('scroll',function(){if(window.scrollY>500){t.classList.add('show');}else{t.classList.remove('show');}},{passive:true});})();
 /* --- Scroll-Reveal (gestaffelt) + Count-up --- */
 (function(){
