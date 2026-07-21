@@ -177,6 +177,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <a href="index.html" class="flex items-center"><img src="logo.svg" alt="BeerTasting" class="h-6 w-auto"></a>
 <!-- Desktop-Nav -->
 <div class="hidden md:flex items-center gap-4">
+<a class="text-on-surface hover:opacity-60 transition-opacity duration-200 cursor-pointer font-button text-button" href="index.html">Startseite</a>
+<span aria-hidden="true" class="w-px h-4 bg-border-muted"></span>
 <a class="text-on-surface hover:opacity-60 transition-opacity duration-200 cursor-pointer font-button text-button" href="#nutzen">Nutzen</a>
 <span aria-hidden="true" class="w-px h-4 bg-border-muted"></span>
 <a class="text-on-surface hover:opacity-60 transition-opacity duration-200 cursor-pointer font-button text-button" href="#funktionsweise">So funktioniert's</a>
@@ -194,7 +196,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <!-- Mobile-Nav-Panel -->
 <div id="mobile-menu" class="hidden md:hidden border-t border-border-muted bg-surface-container-lowest">
 <div class="flex flex-col px-gutter py-2">
-<a class="text-on-surface hover:opacity-60 transition-opacity py-3 font-button text-button" href="#nutzen" onclick="closeMobileMenu()">Nutzen</a>
+<a class="text-on-surface hover:opacity-60 transition-opacity py-3 font-button text-button" href="index.html" onclick="closeMobileMenu()">Startseite</a>
+<a class="text-on-surface hover:opacity-60 transition-opacity py-3 font-button text-button border-t border-border-muted" href="#nutzen" onclick="closeMobileMenu()">Nutzen</a>
 <a class="text-on-surface hover:opacity-60 transition-opacity py-3 font-button text-button border-t border-border-muted" href="#funktionsweise" onclick="closeMobileMenu()">So funktioniert's</a>
 <a class="text-on-surface hover:opacity-60 transition-opacity py-3 font-button text-button border-t border-border-muted" href="#preis" onclick="closeMobileMenu()">Preis</a>
 <a class="text-on-surface hover:opacity-60 transition-opacity py-3 font-button text-button border-t border-border-muted" href="#faq" onclick="closeMobileMenu()">FAQ</a>
