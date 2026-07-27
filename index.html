@@ -151,7 +151,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <div class="flex items-center gap-3">
 <!-- Seitenumschalter (ab 640px sichtbar) -->
 <div class="hidden sm:flex items-center gap-1 rounded-full border border-border-muted bg-surface-container-low p-1" role="group" aria-label="Seitenauswahl">
-<span class="px-3 py-1.5 rounded-full font-body-sm text-body-sm text-center transition-colors duration-200 whitespace-nowrap bg-[#E8A838] text-on-surface font-bold shadow-sm" aria-current="page">Startseite</span>
+<button type="button" onclick="btcScrollTop()" aria-current="page" title="Nach oben" class="px-3 py-1.5 rounded-full font-body-sm text-body-sm text-center transition-colors duration-200 whitespace-nowrap bg-[#E8A838] text-on-surface font-bold shadow-sm cursor-pointer hover:opacity-90">Startseite</button>
 <a href="gastronomie.html" class="px-3 py-1.5 rounded-full font-body-sm text-body-sm text-center transition-colors duration-200 whitespace-nowrap text-text-secondary hover:text-on-surface hover:bg-surface-container-lowest" onclick="try{sessionStorage.setItem('btcwien_scroll_to_content','1')}catch(e){}">Gastronomie</a>
 <a href="brauerei.html" class="px-3 py-1.5 rounded-full font-body-sm text-body-sm text-center transition-colors duration-200 whitespace-nowrap text-text-secondary hover:text-on-surface hover:bg-surface-container-lowest" onclick="try{sessionStorage.setItem('btcwien_scroll_to_content','1')}catch(e){}">Brauerei</a>
 </div>
@@ -161,10 +161,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 <svg class="icon-menu" aria-hidden="true" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon-close" aria-hidden="true" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
 </button>
 <div id="mobile-menu" class="hidden absolute right-0 top-full mt-3 w-72 max-w-[calc(100vw-3rem)] rounded-[8px] border border-border-muted bg-surface-container-lowest shadow-lg p-2">
-<div class="sm:hidden grid grid-cols-3 gap-1 rounded-full border border-border-muted bg-surface-container-low p-1 mb-2" role="group" aria-label="Seitenauswahl">
-<span class="px-3 py-1.5 rounded-full font-body-sm text-body-sm text-center transition-colors duration-200 whitespace-nowrap bg-[#E8A838] text-on-surface font-bold shadow-sm" aria-current="page">Startseite</span>
-<a href="gastronomie.html" class="px-3 py-1.5 rounded-full font-body-sm text-body-sm text-center transition-colors duration-200 whitespace-nowrap text-text-secondary hover:text-on-surface hover:bg-surface-container-lowest" onclick="try{sessionStorage.setItem('btcwien_scroll_to_content','1')}catch(e){};closeMobileMenu()">Gastronomie</a>
-<a href="brauerei.html" class="px-3 py-1.5 rounded-full font-body-sm text-body-sm text-center transition-colors duration-200 whitespace-nowrap text-text-secondary hover:text-on-surface hover:bg-surface-container-lowest" onclick="try{sessionStorage.setItem('btcwien_scroll_to_content','1')}catch(e){};closeMobileMenu()">Brauerei</a>
+<!-- Seitenwechsel nur unter 640px, dort gestapelt -->
+<div class="sm:hidden mb-2 pb-2 border-b border-border-muted" role="group" aria-label="Seitenauswahl">
+<span class="block px-3 pt-1 pb-1 font-label-caps text-label-caps uppercase tracking-wider text-text-secondary select-none">Seite</span>
+<button type="button" onclick="btcScrollTop();closeMobileMenu()" aria-current="page" class="block w-full text-left px-3 py-2.5 rounded-[8px] font-button text-button transition-colors bg-[#E8A838] text-on-surface">Startseite</button>
+<a href="gastronomie.html" class="block w-full text-left px-3 py-2.5 rounded-[8px] font-button text-button transition-colors text-text-secondary hover:bg-surface-container-low hover:text-on-surface" onclick="try{sessionStorage.setItem('btcwien_scroll_to_content','1')}catch(e){};closeMobileMenu()">Gastronomie</a>
+<a href="brauerei.html" class="block w-full text-left px-3 py-2.5 rounded-[8px] font-button text-button transition-colors text-text-secondary hover:bg-surface-container-low hover:text-on-surface" onclick="try{sessionStorage.setItem('btcwien_scroll_to_content','1')}catch(e){};closeMobileMenu()">Brauerei</a>
 </div>
 <a data-navlink class="nav-link block px-3 py-2.5 rounded-[8px] font-button text-button text-on-surface hover:bg-surface-container-low transition-colors" href="#so-gehts" onclick="closeMobileMenu()">So funktioniert&rsquo;s</a>
 <a data-navlink class="nav-link block px-3 py-2.5 rounded-[8px] font-button text-button text-on-surface hover:bg-surface-container-low transition-colors border-t border-border-muted rounded-t-none" href="#belohnungen" onclick="closeMobileMenu()">Belohnungen</a>

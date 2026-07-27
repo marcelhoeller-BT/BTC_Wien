@@ -103,3 +103,13 @@
     }
   });
 })();
+
+/* --- Klick auf die aktuelle Seite: sanft nach oben ------------------------- */
+window.btcScrollTop = function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  // Anker aus der Adresszeile nehmen, damit ein Reload wieder oben startet
+  if (window.history && history.replaceState && location.hash) {
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+};
