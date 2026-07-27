@@ -29,13 +29,26 @@
 
 window.BTC_SOCIAL = [
 
-  // Beispiel (auskommentiert — echte Beiträge hier eintragen):
-  // {
-  //   img:    "social/beispiel.webp",
-  //   handle: "@bierfreundin.wien",
-  //   url:    "https://www.instagram.com/p/ABC123/",
-  //   alt:    "Glas Bier vor einem Wiener Lokal"
-  // },
+  {
+    img:    "social/challenge-team-2023.webp",
+    handle: "@beertasting.challenge",
+    url:    "https://www.instagram.com/p/CwxE6pJNkMp/",
+    alt:    "Das BeerTasting-Team in Official-Beer-Taster-Shirts beim Stand der Challenge 2023"
+  },
+  {
+    img:    "social/challenge-salzburg-bierig.webp",
+    handle: "@kramlmax",
+    url:    "https://www.instagram.com/p/CwveEUJNyLr/",
+    alt:    "Vier Teilnehmende mit BIER-IG-Rucksäcken vor dem Stand bei der Challenge in Salzburg"
+  },
+  {
+    img:    "social/challenge-muenchen-erdinger.webp",
+    handle: "@erdinger.de",
+    url:    "https://www.instagram.com/p/C5qbDU6tGxq/",
+    alt:    "Anstoßen mit Erdinger Weißbier, Ankündigung der BeerTasting Challenge München"
+  },
+
+  // Weitere Beiträge nach demselben Muster ergänzen.
 
 ];
 
