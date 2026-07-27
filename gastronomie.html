@@ -460,6 +460,24 @@ Infos für Gastronomien
 </div>
 </div>
 </section>
+<!-- Section: Social Wall (#BeerTastingChallenge) -->
+<section class="bg-surface-container-lowest px-gutter py-section-gap" id="community">
+<div class="max-w-container-max mx-auto space-y-stack-lg">
+<div data-reveal class="text-center max-w-2xl mx-auto space-y-stack-sm">
+<span class="font-label-caps text-[18px] leading-[24px] text-[#E8A838] uppercase tracking-wider font-bold">Community</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">#BeerTastingChallenge</h2>
+<p class="font-body-lg text-body-lg text-text-secondary">Was Gäste während der Challenge posten – dein Lokal kann mitten drin sein.</p>
+</div>
+<div id="social-wall" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-element-gap" hidden></div>
+<div id="social-wall-empty" data-reveal class="max-w-xl mx-auto text-center border border-dashed border-outline-variant rounded-[8px] px-6 py-10" hidden>
+<span aria-hidden="true" class="material-symbols-outlined text-[#E8A838]" style="font-size:34px">photo_camera</span>
+<p class="font-body-md text-body-md text-text-secondary mt-3">Ab 1. September sammeln wir hier die schönsten Beiträge aus der Challenge. Bis dahin: Hashtag merken.</p>
+</div>
+<div data-reveal class="text-center">
+<a href="https://www.instagram.com/explore/tags/beertastingchallenge/" target="_blank" rel="noopener" class="btn-shine inline-flex items-center justify-center gap-2 bg-[#E8A838] text-on-surface font-button text-button py-3 px-6 rounded-[8px] hover:opacity-90 transition-opacity">Hashtag auf Instagram ansehen<span aria-hidden="true" class="material-symbols-outlined" style="font-size:20px">arrow_forward</span></a>
+</div>
+</div>
+</section>
 <!-- Section: Preis -->
 <section class="bg-[#F3F3F4] px-gutter py-section-gap" id="preis">
 <div class="max-w-container-max mx-auto flex flex-col items-center gap-stack-lg">
@@ -809,4 +827,5 @@ handleFormspree('gastro-form','danke-gastronomie.html','gastro-error');
   restart();
 })();
 </script>
+<script src="social-posts.js" defer></script>
 </body></html>
