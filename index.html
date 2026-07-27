@@ -357,6 +357,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid #E8A838; outline-offs
 </div>
 <div data-reveal>
 <div id="yt-aftermovie" class="relative w-full aspect-video rounded-[8px] overflow-hidden border border-white/10 bg-[#0A0E24]">
+<picture>
+<source media="(max-width: 640px)" srcset="emotion/aftermovie-poster-sm.webp" type="image/webp">
+<img src="emotion/aftermovie-poster.webp" width="1280" height="720" loading="lazy" decoding="async" alt="Junge Gruppe stößt bei der BeerTasting Challenge in Salzburg mit Bier an, im Hintergrund die Festung Hohensalzburg" class="absolute inset-0 w-full h-full object-cover">
+</picture>
+<div aria-hidden="true" class="absolute inset-0 bg-[#0A0E24]/55"></div>
 <button type="button" id="yt-aftermovie-start" class="group absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 cursor-pointer w-full h-full text-center px-6" aria-label="Aftermovie abspielen – lädt Inhalte von YouTube">
 <span class="pointer-events-none absolute inset-0 flex items-center justify-center"><span class="w-[220px] h-[220px] rounded-full opacity-[0.18] blur-3xl" style="background:radial-gradient(circle, #E8A838, transparent 70%)"></span></span>
 <span aria-hidden="true" class="material-symbols-outlined relative text-[#E8A838] transition-transform duration-300 group-hover:scale-110" style="font-size:76px">play_circle</span>
