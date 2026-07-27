@@ -80,3 +80,26 @@
     init();
   }
 })();
+
+/* --- Dropdown schliessen: Klick daneben oder Escape ------------------------ */
+(function () {
+  function zu() {
+    var btn = document.getElementById('mobile-menu-btn');
+    if (!btn || btn.getAttribute('aria-expanded') !== 'true') return;
+    if (typeof window.closeMobileMenu === 'function') window.closeMobileMenu();
+  }
+  document.addEventListener('click', function (e) {
+    var menu = document.getElementById('mobile-menu');
+    var btn = document.getElementById('mobile-menu-btn');
+    if (!menu || !btn) return;
+    if (menu.contains(e.target) || btn.contains(e.target)) return;
+    zu();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+      zu();
+      var btn = document.getElementById('mobile-menu-btn');
+      if (btn) btn.focus();
+    }
+  });
+})();
