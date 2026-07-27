@@ -68,3 +68,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Scrollspy: aktiver Abschnitt in der Kopfnavigation */
+.nav-link { position: relative; }
+.nav-link.is-current { color: #E8A838; }
+.nav-link.is-current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -7px;
+  height: 2px;
+  border-radius: 2px;
+  background: #E8A838;
+}
+/* Im Mobil-Panel stehen die Links untereinander - dort kein Unterstrich */
+#mobile-menu .nav-link.is-current::after { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .nav-link::after { transition: opacity .2s ease; }
+}
